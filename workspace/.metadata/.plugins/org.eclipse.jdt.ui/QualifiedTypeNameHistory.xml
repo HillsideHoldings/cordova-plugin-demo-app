@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="android.media.MediaPlayer.OnInfoListener"/>
+<fullyQualifiedTypeName name="android.media.MediaPlayer.OnPreparedListener"/>
+<fullyQualifiedTypeName name="android.media.MediaPlayer.OnErrorListener"/>
+<fullyQualifiedTypeName name="android.media.MediaPlayer.OnBufferingUpdateListener"/>
+</qualifiedTypeNameHistroy>
