@@ -1,0 +1,25 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.billinar.mediabufferplugin"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "com.billinar.mediabufferplugin"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.billinar.mediabufferplugin"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.billinar.mediabufferplugin"
+        }
+    }
+}
