@@ -26,6 +26,7 @@
 //
 
 #import "MainViewController.h"
+#import "CDVSound.h"
 
 @implementation MainViewController
 
@@ -69,6 +70,8 @@
     // you can do so here.
 
     [super viewWillAppear:animated];
+    [self becomeFirstResponder];
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
 }
 
 - (void)viewDidLoad
@@ -98,6 +101,17 @@
     return[super newCordovaViewWithFrame:bounds];
 }
 */
+
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:remoteControlButtonTapped
+                                                                object:event];
+}
 
 @end
 
