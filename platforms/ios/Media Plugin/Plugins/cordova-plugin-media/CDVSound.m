@@ -30,149 +30,6 @@
 
 @synthesize soundCache, avSession, currMediaId;
 
-- (Float64)durationInSeconds
-{
-    Float64 time = CMTimeGetSeconds(avPlayer.currentItem.duration);
-    if (isnan(time))
-    {
-        time = 0.0;
-    }
-    return time;
-}
-
-- (Float64)currentTimeInSeconds
-{
-    Float64 time = CMTimeGetSeconds(avPlayer.currentTime);
-    if (isnan(time))
-    {
-        time = 0.0;
-    }
-    return time;
-}
-
-- (void)setPlaybackInfo
-{
-    NSMutableDictionary *episodeInfo = [NSMutableDictionary dictionary];
-    episodeInfo[MPMediaItemPropertyArtist] = @"Keith and The Girl";
-    episodeInfo[MPMediaItemPropertyPodcastTitle] = @"Keith and The Girl";
-    episodeInfo[MPMediaItemPropertyMediaType] = @(MPMediaTypePodcast);
-    
-    NSUInteger titleIndex = [avPlayer.currentItem.asset.commonMetadata indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-        AVMutableMetadataItem *metaItem = (AVMutableMetadataItem *)obj;
-        if ([metaItem.commonKey isEqualToString:AVMetadataCommonKeyTitle]) {
-            return YES;
-        }
-        return NO;
-    }];
-    
-    AVMutableMetadataItem *item =(AVMutableMetadataItem*)[avPlayer.currentItem.asset.commonMetadata objectAtIndex:titleIndex];
-    NSString *title = (NSString *)item.value;
-    
-    if (title)
-    {
-        episodeInfo[MPMediaItemPropertyTitle] = title;
-    }
-    if ([self durationInSeconds])
-    {
-        episodeInfo[MPMediaItemPropertyPlaybackDuration] = @([self durationInSeconds]);
-    }
-    if([self currentTimeInSeconds]) {
-        episodeInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = @([self currentTimeInSeconds]);
-        episodeInfo[MPNowPlayingInfoPropertyPlaybackRate] = @1;
-    }
-    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:episodeInfo];
-}
-
-#pragma mark remote control logic
--(void)prepareControls {
-    MPRemoteCommandCenter *rcc = [MPRemoteCommandCenter sharedCommandCenter];
-    MPSkipIntervalCommand *skipBackwardIntervalCommand = [rcc skipBackwardCommand];
-    [skipBackwardIntervalCommand setEnabled:YES];
-    [skipBackwardIntervalCommand addTarget:self action:@selector(skipBackwardEvent:)];
-    skipBackwardIntervalCommand.preferredIntervals = @[@(15)];  // Set your own interval
-    
-    MPSkipIntervalCommand *skipForwardIntervalCommand = [rcc skipForwardCommand];
-    skipForwardIntervalCommand.preferredIntervals = @[@(15)];  // Max 99
-    [skipForwardIntervalCommand setEnabled:YES];
-    [skipForwardIntervalCommand addTarget:self action:@selector(skipForwardEvent:)];
-    
-    MPRemoteCommand *pauseCommand = [rcc pauseCommand];
-    [pauseCommand setEnabled:YES];
-    [pauseCommand addTarget:self action:@selector(playOrPauseEvent:)];
-    //
-    MPRemoteCommand *playCommand = [rcc playCommand];
-    [playCommand setEnabled:YES];
-    [playCommand addTarget:self action:@selector(playOrPauseEvent:)];
-}
-
-#pragma mark - Lock screen actions
--(void)skipBackwardEvent: (MPSkipIntervalCommandEvent *)skipEvent {
-    NSLog(@"Skip backward by %f", skipEvent.interval);
-    [self jumpBackward];
-    [self setPlaybackInfo];
-}
--(void)skipForwardEvent: (MPSkipIntervalCommandEvent *)skipEvent {
-    NSLog(@"Skip forward by %f", skipEvent.interval);
-    [self jumpForward];
-    [self setPlaybackInfo];
-}
--(void)playOrPauseEvent: (MPSkipIntervalCommandEvent *)skipEvent {
-    NSLog(@"playOrPauseEvent");
-    
-}
--(void)remoteControlAction:(NSNotification*)notification {
-    UIEvent *event = [notification object];
-    switch (event.subtype) {
-        case UIEventSubtypeRemoteControlTogglePlayPause:
-            if(avPlayer.rate > 0)
-                [avPlayer pause];
-            else
-                [avPlayer play];
-            break;
-        case UIEventSubtypeRemoteControlPlay:
-            [avPlayer play];
-            break;
-        case UIEventSubtypeRemoteControlStop:
-        case UIEventSubtypeRemoteControlPause:
-            [avPlayer pause];
-            break;
-        case UIEventSubtypeRemoteControlNextTrack:
-        case UIEventSubtypeRemoteControlBeginSeekingForward:
-            [self jumpForward];
-            [self setPlaybackInfo];
-            break;
-        case UIEventSubtypeRemoteControlPreviousTrack:
-        case UIEventSubtypeRemoteControlBeginSeekingBackward:
-            [self jumpBackward];
-            [self setPlaybackInfo];
-            break;
-        default:
-            break;
-    }
-}
-
-- (void)jumpForward
-{
-    [self jump:15.0];
-}
-
-- (void)jumpBackward
-{
-    [self jump:-15.0];
-}
-
-- (void)jump:(Float64)jump
-{
-    Float64 currentSeconds = [self currentTimeInSeconds] + jump;
-    Float64 durationInSeconds = [self durationInSeconds];
-    if (currentSeconds > durationInSeconds)
-    {
-        currentSeconds = durationInSeconds;
-    }
-    CMTime currentTime = CMTimeMakeWithSeconds(currentSeconds, 1);
-    [avPlayer seekToTime:currentTime];
-}
-
 // Maps a url for a resource path for recording
 - (NSURL*)urlForRecording:(NSString*)resourcePath
 {
@@ -357,7 +214,6 @@
 
 - (void)create:(CDVInvokedUrlCommand*)command
 {
-    [self prepareControls];
     NSString* mediaId = [command argumentAtIndex:0];
     NSString* resourcePath = [command argumentAtIndex:1];
 
@@ -528,15 +384,6 @@
                 jsString = [NSString stringWithFormat:@"%@(\"%@\",%d,%.3f);\n%@(\"%@\",%d,%d);", @"cordova.require('cordova-plugin-media.Media').onStatus", mediaId, MEDIA_DURATION, position, @"cordova.require('cordova-plugin-media.Media').onStatus", mediaId, MEDIA_STATE, MEDIA_RUNNING];
                 [self.commandDelegate evalJs:jsString];
             }
-            __weak CDVSound *weakSelf = self;
-            self.timeObserver = [avPlayer addPeriodicTimeObserverForInterval:CMTimeMake(1, 10) queue:nil usingBlock:^(CMTime time) {
-                [weakSelf setPlaybackInfo];
-            }];
-            
-            [[NSNotificationCenter defaultCenter] addObserver:self
-                                                     selector:@selector(remoteControlAction:)
-                                                         name:remoteControlButtonTapped
-                                                       object:nil];
         }
         if (bError) {
             /*  I don't see a problem playing previously recorded audio so removing this section - BG
