@@ -884,7 +884,7 @@ function convertMessageToArgsNativeToJs(message) {
 }
 
 function iOSExec() {
-
+       
     var successCallback, failCallback, service, action, actionArgs;
     var callbackId = null;
     if (typeof arguments[0] !== 'string') {
@@ -894,7 +894,7 @@ function iOSExec() {
         service = arguments[2];
         action = arguments[3];
         actionArgs = arguments[4];
-
+       
         // Since we need to maintain backwards compatibility, we have to pass
         // an invalid callbackId even if no callback was provided since plugins
         // will be expecting it. The Cordova.exec() implementation allocates
@@ -909,6 +909,7 @@ function iOSExec() {
     // If actionArgs is not provided, default to an empty array
     actionArgs = actionArgs || [];
 
+       
     // Register the callbacks and add the callbackId to the positional
     // arguments if given.
     if (successCallback || failCallback) {
@@ -921,17 +922,23 @@ function iOSExec() {
 
     var command = [callbackId, service, action, actionArgs];
 
+       
+       
     // Stringify and queue the command. We stringify to command now to
     // effectively clone the command arguments in case they are mutated before
     // the command is executed.
     commandQueue.push(JSON.stringify(command));
 
+       
+//       alert('iOSExec command: '+service + action+'\ncommandQueue.length'+commandQueue.length);
+       
     // If we're in the context of a stringByEvaluatingJavaScriptFromString call,
     // then the queue will be flushed when it returns; no need for a poke.
     // Also, if there is already a command in the queue, then we've already
     // poked the native side, so there is no reason to do so again.
     if (!isInContextOfEvalJs && commandQueue.length == 1) {
         pokeNative();
+       
     }
 }
 

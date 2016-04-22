@@ -37,23 +37,35 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
+        var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
+
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
+
         console.log('Received Event: ' + id);
-        document.getElementById("playbtn").addEventListener("click", playAudio);
-        //initMedia();
+        
+        app.playMusic();
+        
     },
     
-    
+    playMusic: function(){
+    	playAudio('http://192.168.1.4:81/mediaplayer/tum.mp3');
+    	//playAudio('http://www.songspk320z.us/songoftheday/[Songs.PK]%20Khaike%20Paan%20Banaraswala%20-%20Don%20(2006).mp3');
+    }
 };
 
 app.initialize();
-var my_media = null;
-var isPlaying = false;
-var mediaTimer = null;
 
-function initMedia(){
-	var url = "http://www.songspk320z.us/songoftheday/[Songs.PK]%20Khaike%20Paan%20Banaraswala%20-%20Don%20(2006).mp3";
+
+
+
+//Play audio
+//
+function playAudio(url) {
     // Play the audio file at url
-    my_media = new Media(url,
+    var my_media = new Media(url,
         // success callback
         function () {
             console.log("playAudio():Audio Success");
@@ -63,60 +75,6 @@ function initMedia(){
             console.log("playAudio():Audio Error: " + err);
         }
     );
-	
-}
-
-//Play audio
-//
-function playAudio() {
-	if(my_media == null) initMedia();
-	
-	if(isPlaying){
-		 // Stop audio
-	    my_media.stop();
-	    my_media.release();
-	    //my_media = null;
-	    isPlaying = false;
-	    clearInterval(mediaTimer);
-	    document.getElementById("playbtn").innerHTML = "Play";
-	    document.getElementById("buff").innerHTML = "0%";
-	    
-	}else{
-		 // Play audio
-	    my_media.play();
-	    isPlaying = true;
-	    document.getElementById("playbtn").innerHTML = "Stop";
-	    
-	    clearInterval(mediaTimer);
-	    // Update media position every second
-		mediaTimer = setInterval(function () {
-	    	updateBufferValue();
-	    }, 1000);
-	}
-   
-	
-}
-
-function updateBufferValue (){
-	// get media position
-    my_media.getBufferedPercent(
-        // success callback
-        function (per) {
-            if (per > -1) {
-                document.getElementById("buff").innerHTML = per+"%";
-            }
-            
-            
-            var p = eval(per);
-            if(per >= 100){
-            	clearInterval(mediaTimer);
-            }
-        },
-        // error callback
-        function (e) {
-            console.log("Error getting buffered percentage = " + e);
-            document.getElementById("buff").innerHTML ="Error getting buffered percentage.";
-            clearInterval(mediaTimer);
-        }
-    );
+    // Play audio
+    my_media.play();
 }

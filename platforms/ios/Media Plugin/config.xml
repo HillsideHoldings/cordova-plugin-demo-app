@@ -25,6 +25,9 @@
     <feature name="Media">
         <param name="ios-package" value="CDVSound" />
     </feature>
+    <feature name="Lockscreen">
+        <param name="ios-package" value="Lockscreen" />
+    </feature>
     <name>Media Plugin</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.

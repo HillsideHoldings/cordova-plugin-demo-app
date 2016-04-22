@@ -15,6 +15,9 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.billinar.mediabufferplugin"
+        },
+        "cordova-plugin-lockscreen": {
+            "PACKAGE_NAME": "com.billinar.mediabufferplugin"
         }
     },
     "dependent_plugins": {

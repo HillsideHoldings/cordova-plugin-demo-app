@@ -19,6 +19,10 @@
                         {
                             "xml": "<feature name=\"Media\"><param name=\"ios-package\" value=\"CDVSound\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Lockscreen\"><param name=\"ios-package\" value=\"Lockscreen\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -36,6 +40,9 @@
             "PACKAGE_NAME": "com.billinar.mediabufferplugin"
         },
         "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.billinar.mediabufferplugin"
+        },
+        "cordova-plugin-lockscreen": {
             "PACKAGE_NAME": "com.billinar.mediabufferplugin"
         }
     },
@@ -245,12 +252,21 @@
             "clobbers": [
                 "window.Media"
             ]
+        },
+        {
+            "file": "plugins/cordova-plugin-lockscreen/www/lockscreen.js",
+            "id": "cordova-plugin-lockscreen.Lockscreen",
+            "pluginId": "cordova-plugin-lockscreen",
+            "clobbers": [
+                "Lockscreen"
+            ]
         }
     ],
     "plugin_metadata": {
         "cordova-plugin-console": "1.0.2",
         "cordova-plugin-file": "4.1.1",
         "cordova-plugin-media": "2.2.0",
-        "cordova-plugin-whitelist": "1.2.1"
+        "cordova-plugin-whitelist": "1.2.1",
+        "cordova-plugin-lockscreen": "0.0.1"
     }
 }

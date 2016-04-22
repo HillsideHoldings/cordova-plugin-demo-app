@@ -169,6 +169,13 @@ module.exports = [
         "clobbers": [
             "window.Media"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-lockscreen/www/lockscreen.js",
+        "id": "cordova-plugin-lockscreen.Lockscreen",
+        "clobbers": [
+            "Lockscreen"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -177,7 +184,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.2.1",
     "cordova-plugin-file": "4.1.1",
     "cordova-plugin-media": "2.2.0",
-    "cordova-plugin-console": "1.0.2"
+    "cordova-plugin-console": "1.0.2",
+    "cordova-plugin-lockscreen": "0.0.1"
 };
 // BOTTOM OF METADATA
 });

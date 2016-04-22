@@ -30,5 +30,13 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "cordova-plugin-lockscreen": {
+        "source": {
+            "type": "local",
+            "path": "../cordova-plugin-lockscreen"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }
