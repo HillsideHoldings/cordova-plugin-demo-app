@@ -4,4 +4,13 @@
 <fullyQualifiedTypeName name="android.media.MediaPlayer.OnPreparedListener"/>
 <fullyQualifiedTypeName name="android.media.MediaPlayer.OnErrorListener"/>
 <fullyQualifiedTypeName name="android.media.MediaPlayer.OnBufferingUpdateListener"/>
+<fullyQualifiedTypeName name="android.media.MediaCodec"/>
+<fullyQualifiedTypeName name="android.provider.MediaStore.Audio.AudioColumns"/>
+<fullyQualifiedTypeName name="android.media.AudioManager.OnAudioFocusChangeListener"/>
+<fullyQualifiedTypeName name="android.content.Context"/>
+<fullyQualifiedTypeName name="org.apache.cordova.media.AudioPlayer"/>
+<fullyQualifiedTypeName name="android.preference.PreferenceManager.OnActivityDestroyListener"/>
+<fullyQualifiedTypeName name="android.support.v4.content.WakefulBroadcastReceiver"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="org.apache.cordova.media.LockScreenMediaControl"/>
 </qualifiedTypeNameHistroy>

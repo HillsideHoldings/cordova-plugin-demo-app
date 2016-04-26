@@ -131,7 +131,7 @@ Media.prototype.getCurrentPosition = function(success, fail) {
 Media.prototype.getBufferedPercent = function(success, fail) {
     var me = this;
     exec(function(p) {
-        me._position = p;
+        //me._position = p;
         success(p);
     }, fail, "Media", "getBufferedPercentAudio", [this.id]);
 };
@@ -175,6 +175,13 @@ Media.prototype.setRate = function(rate) {
     }
 };
 
+/**
+ * Get buffered percent of audio.
+ */
+Media.prototype.showControlsOnLockScreen = function() {
+    var me = this;
+    exec(null, null, "Media", "mediaControlSetup", [this.id]);
+};
 
 /**
  * Audio has status update.

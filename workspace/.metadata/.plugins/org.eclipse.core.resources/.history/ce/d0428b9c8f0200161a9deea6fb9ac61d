@@ -1,0 +1,42 @@
+package org.apache.cordova.media;
+
+public class LockScreenMediaControl {
+
+	/**
+	 * Initializes the remote control client
+	 */
+	private void setupMediaSession() {
+	    /* Activate Audio Manager */
+	    mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+	    mAudioManager.requestAudioFocus(mAudioFocusListener, AudioManager.STREAM_MUSIC,
+	            AudioManager.AUDIOFOCUS_GAIN);
+
+	    ComponentName mRemoteControlResponder = new ComponentName(getPackageName(),
+	            MediaButtonReceiver.class.getName());
+	    final Intent mediaButtonIntent = new Intent(Intent.ACTION_MEDIA_BUTTON);
+	    mediaButtonIntent.setComponent(mRemoteControlResponder);
+	    mMediaSessionCompat = new MediaSessionCompat(getApplication(), "JairSession", mRemoteControlResponder, null);
+	    mMediaSessionCompat.setFlags(MediaSessionCompat.FLAG_HANDLES_MEDIA_BUTTONS | MediaSessionCompat.FLAG_HANDLES_TRANSPORT_CONTROLS);
+	    PlaybackStateCompat playbackStateCompat = new PlaybackStateCompat.Builder()
+	            .setActions(
+	                    PlaybackStateCompat.ACTION_SEEK_TO |
+	                    PlaybackStateCompat.ACTION_SKIP_TO_PREVIOUS |
+	                    PlaybackStateCompat.ACTION_SKIP_TO_NEXT |
+	                    PlaybackStateCompat.ACTION_PLAY |
+	                    PlaybackStateCompat.ACTION_PAUSE |
+	                    PlaybackStateCompat.ACTION_STOP
+	            )
+	            .setState(
+	                    isPlaying() ? PlaybackStateCompat.STATE_PLAYING : PlaybackStateCompat.STATE_PAUSED,
+	                    getCurrentPosition(),
+	                    1.0f)
+	            .build();
+	    mMediaSessionCompat.setPlaybackState(playbackStateCompat);
+	    mMediaSessionCompat.setCallback(mMediaSessionCallback);
+	    mMediaSessionCompat.setSessionActivity(retrievePlaybackActions(5));
+	    mMediaSessionCompat.setActive(true);
+	    updateMediaSessionMetaData();
+	    mTransportController = mMediaSessionCompat.getController().getTransportControls();
+	}
+	
+}

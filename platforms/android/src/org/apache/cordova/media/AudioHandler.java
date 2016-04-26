@@ -170,6 +170,9 @@ public class AudioHandler extends CordovaPlugin {
             messageChannel = callbackContext;
             return true;
         }
+        else if (action.equals("mediaControlSetup")) {
+        	this.setupLockScreenControls(args.getString(0));
+        }
         else { // Unrecognized action.
             return false;
         }
@@ -369,6 +372,14 @@ public class AudioHandler extends CordovaPlugin {
         }
         return 0;
     }
+    
+    public void setupLockScreenControls(String id) {
+        AudioPlayer audio = this.players.get(id);
+        if (audio != null) {
+            audio.setupLockScreenMediaControls(this.cordova.getActivity());
+        }
+    }
+    
 
     /**
      * Set the audio device to be used for playback.

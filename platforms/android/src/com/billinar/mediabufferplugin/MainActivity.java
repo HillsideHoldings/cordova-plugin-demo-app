@@ -24,6 +24,7 @@ import java.io.IOException;
 import org.apache.cordova.CordovaActivity;
 
 import android.media.AudioManager;
+import android.media.MediaCodec;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnBufferingUpdateListener;
 import android.media.MediaPlayer.OnErrorListener;
@@ -44,23 +45,14 @@ public class MainActivity extends CordovaActivity implements
 		//initPlayer();
 		// Set by <content src="index.html" /> in config.xml
 		loadUrl(launchUrl);
-		
 	}
 	
 	public void initPlayer() {
 		String url = "http://www.songspk320z.us/songoftheday/[Songs.PK]%20Khaike%20Paan%20Banaraswala%20-%20Don%20(2006).mp3";
-//		url = "http://192.168.1.4:81/mediaplayer/tum.mp3";
 		try {
 			player = new MediaPlayer();
 			player.setAudioStreamType(AudioManager.STREAM_MUSIC);
 		    player.setDataSource(url);
-		    
-			
-//			File file = new File(path);
-//			FileInputStream inputStream = new FileInputStream(file);
-//			player.setDataSource(inputStream.getFD());
-//			inputStream.close();
-			
 			
 		    player.setOnErrorListener(this);
 			player.setOnBufferingUpdateListener(this);

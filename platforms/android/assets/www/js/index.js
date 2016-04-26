@@ -63,6 +63,8 @@ function initMedia(){
             console.log("playAudio():Audio Error: " + err);
         }
     );
+    
+    my_media.showControlsOnLockScreen();
 	
 }
 
