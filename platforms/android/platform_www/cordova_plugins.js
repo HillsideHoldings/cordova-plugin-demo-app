@@ -169,6 +169,28 @@ module.exports = [
         "clobbers": [
             "window.Media"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-device/www/device.js",
+        "id": "cordova-plugin-device.device",
+        "clobbers": [
+            "device"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-background-mode/www/background-mode.js",
+        "id": "cordova-plugin-background-mode.BackgroundMode",
+        "clobbers": [
+            "cordova.plugins.backgroundMode",
+            "plugin.backgroundMode"
+        ]
+    },
+    {
+        "file": "plugins/cordova-lock-screen-media-controls/www/lockscreen.js",
+        "id": "cordova-lock-screen-media-controls.Lockscreen",
+        "clobbers": [
+            "Lockscreen"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -177,7 +199,10 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.2.1",
     "cordova-plugin-file": "4.1.1",
     "cordova-plugin-media": "2.2.0",
-    "cordova-plugin-console": "1.0.2"
+    "cordova-plugin-console": "1.0.2",
+    "cordova-plugin-device": "1.1.2",
+    "cordova-plugin-background-mode": "0.6.5",
+    "cordova-lock-screen-media-controls": "0.0.1"
 };
 // BOTTOM OF METADATA
 });

@@ -30,49 +30,15 @@ import android.widget.Toast;
  * declaring it in a &lt;receiver&gt; tag in AndroidManifest.xml.
  */
 public class MusicIntentReceiver extends BroadcastReceiver {
-    @Override
+    
+	public static final String ACTION = "com.billinar.lockscreencontrols.BUTTON_EVENT";
+	
+	@Override
     public void onReceive(Context context, Intent intent) {
-        if (intent.getAction().equals(android.media.AudioManager.ACTION_AUDIO_BECOMING_NOISY)) {
-            Toast.makeText(context, "Headphones disconnected.", Toast.LENGTH_SHORT).show();
-
-            // send an intent to our MusicService to telling it to pause the audio
-            //context.startService(new Intent(MusicService.ACTION_PAUSE));
-
-        } else if (intent.getAction().equals(Intent.ACTION_MEDIA_BUTTON)) {
-
-            KeyEvent keyEvent = (KeyEvent) intent.getExtras().get(Intent.EXTRA_KEY_EVENT);
-            if (keyEvent.getAction() != KeyEvent.ACTION_DOWN)
-                return;
-
-            switch (keyEvent.getKeyCode()) {
-                case KeyEvent.KEYCODE_HEADSETHOOK:
-                case KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE:
-                    //context.startService(new Intent(MusicService.ACTION_TOGGLE_PLAYBACK));
-                    Toast.makeText(context, "KEYCODE_MEDIA_PLAY_PAUSE.", Toast.LENGTH_SHORT).show();
-                    break;
-                case KeyEvent.KEYCODE_MEDIA_PLAY:
-                    //context.startService(new Intent(MusicService.ACTION_PLAY));
-                    Toast.makeText(context, "KEYCODE_MEDIA_PLAY", Toast.LENGTH_SHORT).show();
-                    break;
-                case KeyEvent.KEYCODE_MEDIA_PAUSE:
-                    //context.startService(new Intent(MusicService.ACTION_PAUSE));
-                    Toast.makeText(context, "KEYCODE_MEDIA_PAUSE", Toast.LENGTH_SHORT).show();
-                    break;
-                case KeyEvent.KEYCODE_MEDIA_STOP:
-                    //context.startService(new Intent(MusicService.ACTION_STOP));
-                    Toast.makeText(context, "KEYCODE_MEDIA_STOP", Toast.LENGTH_SHORT).show();
-                    break;
-                case KeyEvent.KEYCODE_MEDIA_NEXT:
-                    //context.startService(new Intent(MusicService.ACTION_SKIP));
-                    Toast.makeText(context, "KEYCODE_MEDIA_NEXT", Toast.LENGTH_SHORT).show();
-                    break;
-                case KeyEvent.KEYCODE_MEDIA_PREVIOUS:
-                    // TODO: ensure that doing this in rapid succession actually plays the
-                    // previous song
-                    //context.startService(new Intent(MusicService.ACTION_REWIND));
-                    Toast.makeText(context, "KEYCODE_MEDIA_PREVIOUS", Toast.LENGTH_SHORT).show();
-                    break;
-            }
-        }
+		Intent newIntent = new Intent();
+		newIntent.setAction(ACTION);
+		newIntent.putExtra(ACTION, intent.getAction());
+		newIntent.putExtras(intent);
+		context.sendBroadcast(newIntent);
     }
 }

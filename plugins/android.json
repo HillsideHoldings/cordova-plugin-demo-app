@@ -15,10 +15,19 @@
         },
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.billinar.mediabufferplugin"
+        },
+        "cordova-lock-screen-media-controls": {
+            "PACKAGE_NAME": "com.billinar.mediabufferplugin"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.billinar.mediabufferplugin"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.billinar.mediabufferplugin"
+        },
+        "cordova-plugin-background-mode": {
             "PACKAGE_NAME": "com.billinar.mediabufferplugin"
         }
     }
