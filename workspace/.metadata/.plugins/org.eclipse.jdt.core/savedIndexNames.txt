@@ -1,7 +1,0 @@
-INDEX VERSION 1.127+F:\Development\Apps\MediaPluginCordova\MediaPlugin\workspace\.metadata\.plugins\org.eclipse.jdt.core
-2878003851.index
-905257756.index
-715257351.index
-475098746.index
-2072386884.index
-3465765368.index

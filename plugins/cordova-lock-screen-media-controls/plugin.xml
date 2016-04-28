@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-lock-screen-media-controls"
+        version="0.0.1">
+
+    <name>Lockscreen</name>
+    <description>A Cordova plugin that displays lockscreen media info</description>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <js-module src="www/lockscreen.js" name="Lockscreen">
+    <clobbers target="Lockscreen" />
+  </js-module>
+
+
+  <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Lockscreen" >
+                <param name="android-package" value="org.apache.cordova.media.lockscreencontrols.LockscreenPlugin"/>
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <receiver android:name="org.apache.cordova.media.lockscreencontrols.MusicIntentReceiver">
+            <intent-filter>
+                <action android:name="android.media.AUDIO_BECOMING_NOISY" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
+        </config-file>
+		
+		<dependency id="cordova-plugin-background-mode" url="https://github.com/katzer/cordova-plugin-background-mode.git" />
+
+        <source-file src="src/android/AudioFocusHelper.java" target-dir="src/org/apache/cordova/media/lockscreencontrols" />
+        <source-file src="src/android/LockscreenPlugin.java" target-dir="src/org/apache/cordova/media/lockscreencontrols" />
+        <source-file src="src/android/MusicIntentReceiver.java" target-dir="src/org/apache/cordova/media/lockscreencontrols" />
+        <source-file src="src/android/MusicFocusable.java" target-dir="src/org/apache/cordova/media/lockscreencontrols" />
+        <source-file src="src/android/MediaSessionController.java" target-dir="src/org/apache/cordova/media/lockscreencontrols" />
+		<source-file src="src/android/MediaActionListener.java" target-dir="src/org/apache/cordova/media/lockscreencontrols" />
+		<source-file src="libs/android/picasso-2.0.0.jar" target-dir="libs" />
+	</platform>
+  
+  <platform name="ios">
+    
+    <config-file target="config.xml" parent="/*">
+      <feature name="Lockscreen">
+        <param name="ios-package" value="Lockscreen" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/Lockscreen.h" />
+    <source-file src="src/ios/Lockscreen.m" />
+  </platform>
+
+</plugin>

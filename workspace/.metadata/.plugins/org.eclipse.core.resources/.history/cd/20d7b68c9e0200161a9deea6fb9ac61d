@@ -1,5 +1,0 @@
-package org.apache.cordova.media;
-
-public class MediaButtonReceiver {
-
-}

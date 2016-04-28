@@ -1,0 +1,13 @@
+{
+  "name": "cordova-lock-screen-media-controls",
+  "version": "0.0.1",
+  "description": "A Cordova plugin that displays lockscreen media info",
+  "cordova": {
+    "id": "cordova-lock-screen-media-controls",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  }
+  
+}
