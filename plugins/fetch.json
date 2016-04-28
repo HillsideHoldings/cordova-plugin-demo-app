@@ -55,5 +55,14 @@
         },
         "is_top_level": false,
         "variables": {}
+    },
+    "org.devgeeks.volumeslider": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/HillsideHoldings/VolumeSlider.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

@@ -25,14 +25,13 @@ var app = {
 	},
 
 	onDeviceReady : function() {
-		app.receivedEvent('deviceready');
 		// document.addEventListener("resume", onResume, false);
 		// document.addEventListener("pause", onPause, false);
 		document.addEventListener("backbutton", onBackKey, false);
-	},
-	receivedEvent : function(id) {
 		document.getElementById("playbtn").addEventListener("click", playAudio);
+		initVolumeSlide();
 	},
+
 };
 app.initialize();
 
@@ -41,6 +40,7 @@ var my_media = null;
 var isPlaying = false;
 var mediaTimer = null;
 var lockscreen = null;
+var volumeSlider = null;
 
 function initMedia() {
 	var url = "http://www.songspk320z.us/songoftheday/[Songs.PK]%20Khaike%20Paan%20Banaraswala%20-%20Don%20(2006).mp3";
@@ -90,7 +90,7 @@ function playAudio() {
 		isPlaying = true;
 		document.getElementById("playbtn").innerHTML = "Stop";
 
-		//clearInterval(mediaTimer);
+		// clearInterval(mediaTimer);
 		// Update media position every second
 		// mediaTimer = setInterval(function() {
 		// updateBufferValue();
@@ -103,12 +103,12 @@ function playAudio() {
 			"duration" : 123000,
 			"image" : "http://www.songspk320z.us/img/globe.png"
 		});
-		
+
 		// lets show this information on notification as well
 		cordova.plugins.backgroundMode.setDefaults({
-			title:  "Playing...",
-		    ticker: "Playing...",
-		    text:   "Khai k paan banaras wala"
+			title : "Playing...",
+			ticker : "Playing...",
+			text : "Khai k paan banaras wala"
 		});
 	}
 
@@ -144,7 +144,7 @@ function onLockScreenEventReceived(event) {
 		playAudio();
 
 	} else if (event.action == Lockscreen.ACTION_REWIND) {
-		
+
 		my_media.getCurrentPosition(function(p) {
 			p -= skipInterval;
 			my_media.seekTo(1000 * p);
@@ -159,12 +159,43 @@ function onLockScreenEventReceived(event) {
 	}
 }
 
+
+function initVolumeSlide(){
+	
+	volumeSlider = window.plugins.volumeSlider;
+	volumeSlider.createVolumeSlider(10, 50, 300, 30); // origin x, origin y, width, height
+	volumeSlider.showVolumeSlider();
+	
+	// lets give some timeout so that volume slider is fully loaded.
+	setTimeout(function(){
+		
+		volumeSlider.getVolumeLevel(function(vol){
+			console.log("Getting current volume: "+vol);
+		}, function(err){
+			console.log("Error getting volume: "+err);
+		});
+		
+		// Register for event to get volume when user press volume up or down key. Do not forget to unregister this when application is closed.
+		volumeSlider.registerVolumeUpdate(function(vol){
+			console.log("Volume changed: "+vol);
+		});
+		
+	}, 500);
+	
+	
+}
+
 function onBackKey() {
+	// lets release the lock screen media now. It is necessary.
 	if (lockscreen != null) {
 		lockscreen.release();
 		cordova.plugins.backgroundMode.disable();
 	}
-
+	
+	// unregister volume update to avoid memory leaks.
+	if(volumeSlider != null){
+		volumeSlider.unRegisterVolumeUpdate();
+	}
+	
 	navigator.app.exitApp();
-
 }
