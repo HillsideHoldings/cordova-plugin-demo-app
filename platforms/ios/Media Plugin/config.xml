@@ -28,6 +28,9 @@
     <feature name="Lockscreen">
         <param name="ios-package" value="Lockscreen" />
     </feature>
+    <feature name="VolumeSlider">
+        <param name="ios-package" value="VolumeSlider" />
+    </feature>
     <name>Media Plugin</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.

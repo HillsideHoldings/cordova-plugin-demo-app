@@ -12,6 +12,9 @@
     <feature name="Media">
         <param name="android-package" value="org.apache.cordova.media.AudioHandler" />
     </feature>
+    <feature name="VolumeSlider">
+        <param name="android-package" value="org.devgeeks.volumeslider.VolumeSlider" />
+    </feature>
     <allow-intent href="market:*" />
     <name>Media Plugin</name>
     <description>

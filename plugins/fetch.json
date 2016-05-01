@@ -38,5 +38,23 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "org.devgeeks.volumeslider": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/HillsideHoldings/VolumeSlider.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-lock-screen-media-controls": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/HillsideHoldings/cordova-lock-screen-media-controls.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

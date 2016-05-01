@@ -43,9 +43,10 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-
+        
         document.getElementById("playbtn").addEventListener("click", playAudio);
         initMedia();
+        initVolumeSlide();
     },
 
 };
@@ -74,7 +75,7 @@ function initMedia() {
 
 	initLockScreenControls();
   // let's tell system that our app should not go in pause state.
-	cordova.plugins.backgroundMode.enable();
+//	cordova.plugins.backgroundMode.enable();
 }
 
 function initLockScreenControls() {
@@ -139,7 +140,7 @@ function onLockScreenEventReceived(event) {
 
 function initVolumeSlide() {
 	volumeSlider = window.plugins.volumeSlider;
-	volumeSlider.createVolumeSlider(10, 50, 300, 30); // origin x, origin y, width, height
+	volumeSlider.createVolumeSlider(10, 450, 300, 30); // origin x, origin y, width, height
 	volumeSlider.showVolumeSlider();
 	// lets give some timeout so that volume slider is fully loaded.
 	setTimeout(function(){

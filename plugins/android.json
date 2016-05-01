@@ -18,6 +18,12 @@
         },
         "cordova-plugin-lockscreen": {
             "PACKAGE_NAME": "com.billinar.mediabufferplugin"
+        },
+        "org.devgeeks.volumeslider": {
+            "PACKAGE_NAME": "com.billinar.mediabufferplugin"
+        },
+        "cordova-lock-screen-media-controls": {
+            "PACKAGE_NAME": "com.billinar.mediabufferplugin"
         }
     },
     "dependent_plugins": {
