@@ -45,6 +45,8 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         document.getElementById("playbtn").addEventListener("click", playAudio);
+        document.getElementById("slowbtn").addEventListener("click", slowMode);
+        document.getElementById("normalbtn").addEventListener("click", normalMode);
         initMedia();
         initVolumeSlide();
     },
@@ -117,6 +119,13 @@ function playAudio() {
 	}
 }
 
+function slowMode() {
+    my_media.setRate(0.5);
+}
+function normalMode() {
+    my_media.setRate(1);
+}
+
 function onLockScreenEventReceived(event) {
 	if (event == Lockscreen.ACTION_PLAY_PAUSE
       || event == Lockscreen.ACTION_PLAY
@@ -140,7 +149,7 @@ function onLockScreenEventReceived(event) {
 
 function initVolumeSlide() {
 	volumeSlider = window.plugins.volumeSlider;
-	volumeSlider.createVolumeSlider(10, 450, 300, 30); // origin x, origin y, width, height
+	volumeSlider.createVolumeSlider(10, 500, 300, 30); // origin x, origin y, width, height
 	volumeSlider.showVolumeSlider();
 	// lets give some timeout so that volume slider is fully loaded.
 	setTimeout(function(){
