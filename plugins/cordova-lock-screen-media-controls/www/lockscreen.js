@@ -8,7 +8,6 @@
 	Lockscreen.STATE_PLAYING = "PLAYING";
 	Lockscreen.STATE_PAUSED = "PAUSED";
 	Lockscreen.STATE_STOPPED = "STOPPED";
-	Lockscreen.STATE_STOPPED = "STOPPED";
 	Lockscreen.ACTION_PLAY_PAUSE = "PLAY_PAUSE";
 	Lockscreen.ACTION_REWIND = "REWIND";
 	Lockscreen.ACTION_FORWARD = "FORWARD";
