@@ -15,6 +15,9 @@
         <param name="ios-package" value="CDVGestureHandler" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="Lockscreen">
+        <param name="ios-package" value="Lockscreen" />
+    </feature>
     <feature name="Console">
         <param name="ios-package" value="CDVLogger" />
     </feature>
@@ -24,9 +27,6 @@
     </feature>
     <feature name="Media">
         <param name="ios-package" value="CDVSound" />
-    </feature>
-    <feature name="Lockscreen">
-        <param name="ios-package" value="Lockscreen" />
     </feature>
     <feature name="VolumeSlider">
         <param name="ios-package" value="VolumeSlider" />

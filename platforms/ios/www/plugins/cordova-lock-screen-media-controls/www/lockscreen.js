@@ -45,5 +45,4 @@ cordova.define("cordova-lock-screen-media-controls.Lockscreen", function(require
 		};
 
 			module.exports = Lockscreen;
-
 });

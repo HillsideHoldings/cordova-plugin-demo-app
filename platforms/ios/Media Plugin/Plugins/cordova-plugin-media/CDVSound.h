@@ -21,8 +21,6 @@
 
 #import <Cordova/CDVPlugin.h>
 
-#define remoteControlButtonTapped @"remoteControlButtonTapped"
-
 enum CDVMediaError {
     MEDIA_ERR_ABORTED = 1,
     MEDIA_ERR_NETWORK = 2,
@@ -92,7 +90,6 @@ typedef NSUInteger CDVMediaMsg;
 @property (nonatomic, strong) NSMutableDictionary* soundCache;
 @property (nonatomic, strong) AVAudioSession* avSession;
 @property (nonatomic, strong) NSString* currMediaId;
-@property (nonatomic) id timeObserver;
 
 - (void)startPlayingAudio:(CDVInvokedUrlCommand*)command;
 - (void)pausePlayingAudio:(CDVInvokedUrlCommand*)command;

@@ -26,7 +26,6 @@
 //
 
 #import "MainViewController.h"
-#import "CDVSound.h"
 
 @implementation MainViewController
 

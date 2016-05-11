@@ -43,7 +43,7 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-        
+
         document.getElementById("playbtn").addEventListener("click", playAudio);
         document.getElementById("slowbtn").addEventListener("click", slowMode);
         document.getElementById("normalbtn").addEventListener("click", normalMode);

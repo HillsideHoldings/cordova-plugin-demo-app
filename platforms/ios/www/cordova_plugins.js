@@ -1,6 +1,14 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
+        "file": "plugins/cordova-lock-screen-media-controls/www/lockscreen.js",
+        "id": "cordova-lock-screen-media-controls.Lockscreen",
+        "pluginId": "cordova-lock-screen-media-controls",
+        "clobbers": [
+            "Lockscreen"
+        ]
+    },
+    {
         "file": "plugins/cordova-plugin-console/www/console-via-logger.js",
         "id": "cordova-plugin-console.console",
         "pluginId": "cordova-plugin-console",
@@ -206,40 +214,23 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/cordova-plugin-lockscreen/www/lockscreen.js",
-        "id": "cordova-plugin-lockscreen.Lockscreen",
-        "pluginId": "cordova-plugin-lockscreen",
-        "clobbers": [
-            "Lockscreen"
-        ]
-    },
-    {
         "file": "plugins/org.devgeeks.volumeslider/www/VolumeSlider.js",
         "id": "org.devgeeks.volumeslider.VolumeSlider",
         "pluginId": "org.devgeeks.volumeslider",
         "clobbers": [
             "plugins.volumeSlider"
         ]
-    },
-    {
-        "file": "plugins/cordova-lock-screen-media-controls/www/lockscreen.js",
-        "id": "cordova-lock-screen-media-controls.Lockscreen",
-        "pluginId": "cordova-lock-screen-media-controls",
-        "clobbers": [
-            "Lockscreen"
-        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
+    "cordova-lock-screen-media-controls": "0.0.1",
     "cordova-plugin-console": "1.0.2",
     "cordova-plugin-file": "4.1.1",
     "cordova-plugin-media": "2.2.0",
     "cordova-plugin-whitelist": "1.2.1",
-    "cordova-plugin-lockscreen": "0.0.1",
-    "org.devgeeks.volumeslider": "1.0.0",
-    "cordova-lock-screen-media-controls": "0.0.1"
+    "org.devgeeks.volumeslider": "1.0.0"
 }
 // BOTTOM OF METADATA
 });

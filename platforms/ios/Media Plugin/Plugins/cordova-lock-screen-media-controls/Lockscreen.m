@@ -103,11 +103,11 @@
     NSDictionary *metadata = [command argumentAtIndex:0];
     
     if(metadata[@"title"])
-        self.trackTitle = metadata[@"title"];
+    self.trackTitle = metadata[@"title"];
     if(metadata[@"subTitle"])
-        self.trackSubtitle = metadata[@"subTitle"];
+    self.trackSubtitle = metadata[@"subTitle"];
     if(metadata[@"duration"])
-        self.trackDuration = metadata[@"duration"];
+    self.trackDuration = metadata[@"duration"];
     if(metadata[@"image"]) {
         NSURL *artworkURL = [NSURL URLWithString:metadata[@"image"]];
         NSData *imgData = [NSData dataWithContentsOfURL:artworkURL];

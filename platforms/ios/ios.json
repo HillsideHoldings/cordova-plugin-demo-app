@@ -9,6 +9,10 @@
                 "parents": {
                     "/*": [
                         {
+                            "xml": "<feature name=\"Lockscreen\"><param name=\"ios-package\" value=\"Lockscreen\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"Console\"><param name=\"ios-package\" value=\"CDVLogger\" /></feature>",
                             "count": 1
                         },
@@ -21,10 +25,6 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"Lockscreen\"><param name=\"ios-package\" value=\"Lockscreen\" /></feature>",
-                            "count": 2
-                        },
-                        {
                             "xml": "<feature name=\"VolumeSlider\"><param name=\"ios-package\" value=\"VolumeSlider\" /></feature>",
                             "count": 1
                         }
@@ -34,6 +34,9 @@
         }
     },
     "installed_plugins": {
+        "cordova-lock-screen-media-controls": {
+            "PACKAGE_NAME": "com.billinar.mediabufferplugin"
+        },
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.billinar.mediabufferplugin"
         },
@@ -46,18 +49,20 @@
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.billinar.mediabufferplugin"
         },
-        "cordova-plugin-lockscreen": {
-            "PACKAGE_NAME": "com.billinar.mediabufferplugin"
-        },
         "org.devgeeks.volumeslider": {
-            "PACKAGE_NAME": "com.billinar.mediabufferplugin"
-        },
-        "cordova-lock-screen-media-controls": {
             "PACKAGE_NAME": "com.billinar.mediabufferplugin"
         }
     },
     "dependent_plugins": {},
     "modules": [
+        {
+            "file": "plugins/cordova-lock-screen-media-controls/www/lockscreen.js",
+            "id": "cordova-lock-screen-media-controls.Lockscreen",
+            "pluginId": "cordova-lock-screen-media-controls",
+            "clobbers": [
+                "Lockscreen"
+            ]
+        },
         {
             "file": "plugins/cordova-plugin-console/www/console-via-logger.js",
             "id": "cordova-plugin-console.console",
@@ -264,37 +269,20 @@
             ]
         },
         {
-            "file": "plugins/cordova-plugin-lockscreen/www/lockscreen.js",
-            "id": "cordova-plugin-lockscreen.Lockscreen",
-            "pluginId": "cordova-plugin-lockscreen",
-            "clobbers": [
-                "Lockscreen"
-            ]
-        },
-        {
             "file": "plugins/org.devgeeks.volumeslider/www/VolumeSlider.js",
             "id": "org.devgeeks.volumeslider.VolumeSlider",
             "pluginId": "org.devgeeks.volumeslider",
             "clobbers": [
                 "plugins.volumeSlider"
             ]
-        },
-        {
-            "file": "plugins/cordova-lock-screen-media-controls/www/lockscreen.js",
-            "id": "cordova-lock-screen-media-controls.Lockscreen",
-            "pluginId": "cordova-lock-screen-media-controls",
-            "clobbers": [
-                "Lockscreen"
-            ]
         }
     ],
     "plugin_metadata": {
+        "cordova-lock-screen-media-controls": "0.0.1",
         "cordova-plugin-console": "1.0.2",
         "cordova-plugin-file": "4.1.1",
         "cordova-plugin-media": "2.2.0",
         "cordova-plugin-whitelist": "1.2.1",
-        "cordova-plugin-lockscreen": "0.0.1",
-        "org.devgeeks.volumeslider": "1.0.0",
-        "cordova-lock-screen-media-controls": "0.0.1"
+        "org.devgeeks.volumeslider": "1.0.0"
     }
 }

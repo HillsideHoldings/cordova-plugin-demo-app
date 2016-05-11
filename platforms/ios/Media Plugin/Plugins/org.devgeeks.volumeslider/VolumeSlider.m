@@ -17,6 +17,11 @@
 float userVolume  = 0.2;
 UISlider* volumeViewSlider = nil;
 
+#ifndef __IPHONE_3_0
+@synthesize webView;
+#endif
+
+
 
 #pragma mark -
 #pragma mark VolumeSlider
