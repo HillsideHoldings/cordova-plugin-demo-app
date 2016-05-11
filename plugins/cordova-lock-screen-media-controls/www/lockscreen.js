@@ -1,5 +1,3 @@
-cordova.define("cordova-lock-screen-media-controls.Lockscreen", function(require, exports, module) {
-
 		var Lockscreen = function() {
 			cordova.exec(null, null, "Lockscreen", "init", []);
 		};
@@ -45,4 +43,3 @@ cordova.define("cordova-lock-screen-media-controls.Lockscreen", function(require
 		};
 
 			module.exports = Lockscreen;
-});
