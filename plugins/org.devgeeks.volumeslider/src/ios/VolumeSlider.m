@@ -21,13 +21,6 @@ UISlider* volumeViewSlider = nil;
 @synthesize webView;
 #endif
 
--(CDVPlugin*) initWithWebView:(UIWebView*)theWebView
-{
-    self = (VolumeSlider*)[super initWithWebView:theWebView];
-    return self;
-}
-
-
 #pragma mark -
 #pragma mark VolumeSlider
 

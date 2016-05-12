@@ -178,17 +178,17 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/org.devgeeks.volumeslider/www/VolumeSlider.js",
-        "id": "org.devgeeks.volumeslider.VolumeSlider",
-        "clobbers": [
-            "plugins.volumeSlider"
-        ]
-    },
-    {
         "file": "plugins/cordova-lock-screen-media-controls/www/lockscreen.js",
         "id": "cordova-lock-screen-media-controls.Lockscreen",
         "clobbers": [
             "Lockscreen"
+        ]
+    },
+    {
+        "file": "plugins/org.devgeeks.volumeslider/www/VolumeSlider.js",
+        "id": "org.devgeeks.volumeslider.VolumeSlider",
+        "clobbers": [
+            "plugins.volumeSlider"
         ]
     }
 ];
@@ -200,8 +200,8 @@ module.exports.metadata =
     "cordova-plugin-media": "2.2.0",
     "cordova-plugin-console": "1.0.2",
     "cordova-plugin-lockscreen": "0.0.1",
-    "org.devgeeks.volumeslider": "1.0.0",
-    "cordova-lock-screen-media-controls": "0.0.1"
+    "cordova-lock-screen-media-controls": "0.0.1",
+    "org.devgeeks.volumeslider": "1.0.0"
 };
 // BOTTOM OF METADATA
 });
