@@ -10,20 +10,23 @@
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.billinar.mediabufferplugin"
         },
-        "cordova-plugin-media": {
-            "PACKAGE_NAME": "com.billinar.mediabufferplugin"
-        },
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.billinar.mediabufferplugin"
-        },
-        "cordova-lock-screen-media-controls": {
             "PACKAGE_NAME": "com.billinar.mediabufferplugin"
         },
         "org.devgeeks.volumeslider": {
             "PACKAGE_NAME": "com.billinar.mediabufferplugin"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "com.billinar.mediabufferplugin"
+        },
+        "cordova-lock-screen-media-controls": {
+            "PACKAGE_NAME": "com.billinar.mediabufferplugin"
         }
     },
     "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.billinar.mediabufferplugin"
+        },
         "cordova-plugin-file": {
             "PACKAGE_NAME": "com.billinar.mediabufferplugin"
         },

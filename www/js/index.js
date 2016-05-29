@@ -41,6 +41,7 @@ var isPlaying = false;
 var mediaTimer = null;
 var lockscreen = null;
 var volumeSlider = null;
+var externalMediaControls = null;
 
 function initMedia() {
 	var url = "http://www.songspk320z.us/songoftheday/[Songs.PK]%20Khaike%20Paan%20Banaraswala%20-%20Don%20(2006).mp3";
@@ -57,6 +58,8 @@ function initMedia() {
 
 	initLockScreenControls();
 
+	//initExternalMediaControls();
+
 }
 
 function initLockScreenControls() {
@@ -69,7 +72,6 @@ function initLockScreenControls() {
 }
 
 // Play audio
-//
 function playAudio() {
 	if (my_media == null)
 		initMedia();
@@ -82,8 +84,10 @@ function playAudio() {
 		// clearInterval(mediaTimer);
 		document.getElementById("playbtn").innerHTML = "Play";
 		document.getElementById("buff").innerHTML = "0%";
-		lockscreen.setState(Lockscreen.STATE_PAUSED);
-
+		if (lockscreen != null) {
+			lockscreen.setState(Lockscreen.STATE_PAUSED);
+		}
+		
 	} else {
 		// Play audio
 		my_media.play();
@@ -96,20 +100,23 @@ function playAudio() {
 		// updateBufferValue();
 		// }, 1000);
 
-		lockscreen.setState(Lockscreen.STATE_PLAYING);
-		lockscreen.setMetadata({
-			"title" : "Khai k paan banaras wala",
-			"subTitle" : "Don",
-			"duration" : 123000,
-			"image" : "http://www.songspk320z.us/img/globe.png"
-		});
+		if (lockscreen != null) {
 
-		// lets show this information on notification as well
-		cordova.plugins.backgroundMode.setDefaults({
-			title : "Playing...",
-			ticker : "Playing...",
-			text : "Khai k paan banaras wala"
-		});
+			lockscreen.setState(Lockscreen.STATE_PLAYING);
+			lockscreen.setMetadata({
+				"title" : "Khai k paan banaras wala",
+				"subTitle" : "Don",
+				"duration" : 123000,
+				"image" : "http://www.songspk320z.us/img/globe.png"
+			});
+
+			// lets show this information on notification as well
+			cordova.plugins.backgroundMode.setDefaults({
+				title : "Playing...",
+				ticker : "Playing...",
+				text : "Khai k paan banaras wala"
+			});
+		}
 	}
 
 }
@@ -156,34 +163,63 @@ function onLockScreenEventReceived(event) {
 			p += skipInterval;
 			my_media.seekTo(1000 * p);
 		}, null);
-	}
+	}else if (event.action == Lockscreen.ACTION_HEADSET_SINGLE_CLICK) {
+        // toggle playing
+        playAudio();
+
+    } else if (event.action == Lockscreen.ACTION_HEADSET_DOUBLE_CLICK) {
+
+        alert("Double click from headset detected");
+
+    } else if (event.action == Lockscreen.ACTION_HEADSET_TRIPPLE_CLICK) {
+
+        alert("Tripple click from headset detected");
+    }
 }
 
+function initVolumeSlide() {
 
-function initVolumeSlide(){
-	
 	volumeSlider = window.plugins.volumeSlider;
-	volumeSlider.createVolumeSlider(10, 50, 300, 30); // origin x, origin y, width, height
+	volumeSlider.createVolumeSlider(10, 50, 300, 30); // origin x, origin y,
+														// width, height
 	volumeSlider.showVolumeSlider();
-	
+
 	// lets give some timeout so that volume slider is fully loaded.
-	setTimeout(function(){
-		
-		volumeSlider.getVolumeLevel(function(vol){
-			console.log("Getting current volume: "+vol);
-		}, function(err){
-			console.log("Error getting volume: "+err);
+	setTimeout(function() {
+
+		volumeSlider.getVolumeLevel(function(vol) {
+			console.log("Getting current volume: " + vol);
+		}, function(err) {
+			console.log("Error getting volume: " + err);
 		});
-		
-		// Register for event to get volume when user press volume up or down key. Do not forget to unregister this when application is closed.
-		volumeSlider.registerVolumeUpdate(function(vol){
-			console.log("Volume changed: "+vol);
+
+		// Register for event to get volume when user press volume up or down
+		// key. Do not forget to unregister this when application is closed.
+		volumeSlider.registerVolumeUpdate(function(vol) {
+			console.log("Volume changed: " + vol);
 		});
-		
+
 	}, 500);
-	
-	
+
 }
+
+//function initExternalMediaControls() {
+//	externalMediaControls = new ExternalMediaControls();
+//	externalMediaControls.listenExternalActions(function(){
+//		if (event.action == ExternalMediaControls.ACTION_HEADSET_SINGLE_CLICK) {
+//			// toggle playing
+//			playAudio();
+//
+//		} else if (event.action == ExternalMediaControls.ACTION_HEADSET_DOUBLE_CLICK) {
+//
+//			alert("Double click from headset detected");
+//
+//		} else if (event.action == ExternalMediaControls.ACTION_HEADSET_TRIPPLE_CLICK) {
+//
+//			alert("Tripple click from headset detected");
+//		}
+//	});
+//}
 
 function onBackKey() {
 	// lets release the lock screen media now. It is necessary.
@@ -191,11 +227,11 @@ function onBackKey() {
 		lockscreen.release();
 		cordova.plugins.backgroundMode.disable();
 	}
-	
+
 	// unregister volume update to avoid memory leaks.
-	if(volumeSlider != null){
+	if (volumeSlider != null) {
 		volumeSlider.unRegisterVolumeUpdate();
 	}
-	
+
 	navigator.app.exitApp();
 }

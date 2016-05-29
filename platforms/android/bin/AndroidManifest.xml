@@ -18,6 +18,14 @@
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
             </intent-filter>
         </receiver>
+        <receiver android:name="org.apache.cordova.externalmediacontrols.MusicIntentReceiver">
+            <intent-filter>
+                <action android:name="android.media.AUDIO_BECOMING_NOISY" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
     </application>
     <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />

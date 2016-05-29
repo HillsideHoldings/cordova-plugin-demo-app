@@ -5,6 +5,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Handler;
 import android.graphics.Bitmap;
 import android.support.v4.media.MediaMetadataCompat;
 import android.support.v4.media.session.MediaControllerCompat;
@@ -19,7 +20,7 @@ import android.widget.Toast;
 public class MediaSessionController implements MusicFocusable {
 
 	public enum MediaAction {
-		PLAY_PAUSE, REWIND, FORWARD, STOP, PLAY, PAUSE
+		PLAY_PAUSE, REWIND, FORWARD, STOP, PLAY, PAUSE, HEADSET_SINGLE_CLICK, HEADSET_DOUBLE_CLICK, HEADSET_TRIPPLE_CLICK
 	}
 
 	public enum MediaState {
@@ -45,6 +46,10 @@ public class MediaSessionController implements MusicFocusable {
 	private MediaControllerCompat.TransportControls mTransportController;
 	private PlaybackStateCompat.Builder mPlaybackStateCompatBuilder;
 	private MediaActionListener mediaActionListener = null;
+	
+	private static final long DOUBLE_PRESS_INTERVAL = 250; // in millis
+	private long lastTapTimeMs = 0;
+	private int numberOfTaps = 0;
 
 	public MediaSessionController(Context context) {
 		this.mContext = context;
@@ -127,11 +132,7 @@ public class MediaSessionController implements MusicFocusable {
 	public void setMetaData(String title, String subTitle, long duration,
 			Bitmap backgroundImage) {
 
-		// if (backgroundImage == null) {
-		// backgroundImage =
-		// BitmapFactory.decodeResource(mContext.getResources(),
-		// R.drawable.sample_img);
-		// }
+		
 
 		MediaMetadataCompat.Builder builder = new MediaMetadataCompat.Builder();
 		builder.putString(MediaMetadataCompat.METADATA_KEY_ALBUM, subTitle);
@@ -140,9 +141,7 @@ public class MediaSessionController implements MusicFocusable {
 		builder.putBitmap(MediaMetadataCompat.METADATA_KEY_ALBUM_ART,
 				backgroundImage);
 
-		// builder.putBitmap(MediaMetadataCompat.METADATA_KEY_ART,
-		// BitmapFactory.decodeResource(mContext.getResources(),
-		// R.drawable.sample_img));
+		
 		mMediaSessionCompat.setMetadata(builder.build());
 	}
 
@@ -255,7 +254,10 @@ public class MediaSessionController implements MusicFocusable {
 		public void onReceive(Context context, Intent intent) {
 			
 			String action = intent.getStringExtra(MusicIntentReceiver.ACTION);
-			if (action.equals(Intent.ACTION_MEDIA_BUTTON)) {
+			if (action
+					.equals(android.media.AudioManager.ACTION_AUDIO_BECOMING_NOISY)) {
+				// headset is now disconnected
+			} else if (action.equals(Intent.ACTION_MEDIA_BUTTON)) {
 
 				KeyEvent keyEvent = (KeyEvent) intent.getExtras().get(
 						Intent.EXTRA_KEY_EVENT);
@@ -264,42 +266,78 @@ public class MediaSessionController implements MusicFocusable {
 
 				switch (keyEvent.getKeyCode()) {
 				case KeyEvent.KEYCODE_HEADSETHOOK:
+					detectAndSendTapAction();
+					
+					break;
 				case KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE:
-					if (mediaActionListener != null) {
-						mediaActionListener
-								.onMediaAction(MediaAction.PLAY_PAUSE);
-					}
+					sendMediaAction(MediaAction.PLAY_PAUSE);
+					
 					break;
 				case KeyEvent.KEYCODE_MEDIA_PLAY:
-					if (mediaActionListener != null) {
-						mediaActionListener.onMediaAction(MediaAction.PLAY);
-					}
+						sendMediaAction(MediaAction.PLAY);
+					
 					break;
 				case KeyEvent.KEYCODE_MEDIA_PAUSE:
-					if (mediaActionListener != null) {
-						mediaActionListener.onMediaAction(MediaAction.PAUSE);
-					}
+						sendMediaAction(MediaAction.PAUSE);
+					
 					break;
 				case KeyEvent.KEYCODE_MEDIA_STOP:
-					if (mediaActionListener != null) {
-						mediaActionListener.onMediaAction(MediaAction.STOP);
-					}
+						sendMediaAction(MediaAction.STOP);
+					
 					break;
 				case KeyEvent.KEYCODE_MEDIA_NEXT:
-					if (mediaActionListener != null) {
-						mediaActionListener.onMediaAction(MediaAction.FORWARD);
-					}
+						sendMediaAction(MediaAction.FORWARD);
+					
 					break;
 				case KeyEvent.KEYCODE_MEDIA_PREVIOUS:
-					if (mediaActionListener != null) {
-						mediaActionListener.onMediaAction(MediaAction.REWIND);
-					}
+						sendMediaAction(MediaAction.REWIND);
+					
 					break;
 				}
 			}
 		}
 	};
 
+	
+	private void detectAndSendTapAction() {
+		// Get current time in nano seconds.
+		long pressTime = System.currentTimeMillis();
+		
+		if (numberOfTaps > 0
+				&& (pressTime - lastTapTimeMs) < DOUBLE_PRESS_INTERVAL) {
+			numberOfTaps += 1;
+		} else {
+			numberOfTaps = 1;
+		}
+
+		lastTapTimeMs = pressTime;
+
+		if (numberOfTaps == 1){
+			// handle single tap
+			new Handler().postDelayed(new Runnable() {
+		        @Override
+		        public void run() {
+		        	if (numberOfTaps >= 3) {
+		        		sendMediaAction(MediaAction.HEADSET_TRIPPLE_CLICK);
+		    		} else if (numberOfTaps == 2) {
+		        		sendMediaAction(MediaAction.HEADSET_DOUBLE_CLICK);
+		    		}else if (numberOfTaps == 1){
+		        		sendMediaAction(MediaAction.HEADSET_SINGLE_CLICK);
+		    		}
+		        	
+		        	numberOfTaps = 0;
+		                                  
+		        }
+		    }, DOUBLE_PRESS_INTERVAL*2);
+		}
+	}
+	
+	private void sendMediaAction(MediaAction action) {
+		if (mediaActionListener != null) {
+			mediaActionListener.onMediaAction(action);
+		}
+	}
+	
 	public void release() {
 		if (mMediaSessionCompat != null)
 			mMediaSessionCompat.release();

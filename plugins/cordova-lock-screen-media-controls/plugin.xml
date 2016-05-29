@@ -43,6 +43,8 @@
         <source-file src="src/android/MediaSessionController.java" target-dir="src/org/apache/cordova/media/lockscreencontrols" />
 		<source-file src="src/android/MediaActionListener.java" target-dir="src/org/apache/cordova/media/lockscreencontrols" />
 		<source-file src="libs/android/picasso-2.0.0.jar" target-dir="libs" />
+		<source-file src="libs/android/android-support-v7-appcompat.jar" target-dir="libs" />
+		<source-file src="libs/android/android-support-v4.jar" target-dir="libs" />
 	</platform>
   
   <platform name="ios">

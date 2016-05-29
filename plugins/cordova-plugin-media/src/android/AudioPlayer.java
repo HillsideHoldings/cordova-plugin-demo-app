@@ -20,6 +20,7 @@ package org.apache.cordova.media;
 
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnBufferingUpdateListener;
 import android.media.MediaPlayer.OnCompletionListener;
 import android.media.MediaPlayer.OnErrorListener;
 import android.media.MediaPlayer.OnPreparedListener;
@@ -43,7 +44,7 @@ import java.io.IOException;
  *      android_asset:      file name must start with /android_asset/sound.mp3
  *      sdcard:             file name is just sound.mp3
  */
-public class AudioPlayer implements OnCompletionListener, OnPreparedListener, OnErrorListener {
+public class AudioPlayer implements OnCompletionListener, OnPreparedListener, OnErrorListener, OnBufferingUpdateListener {
 
     // AudioPlayer modes
     public enum MODE { NONE, PLAY, RECORD };
@@ -87,6 +88,8 @@ public class AudioPlayer implements OnCompletionListener, OnPreparedListener, On
     private boolean prepareOnly = true;     // playback after file prepare flag
     private int seekOnPrepared = 0;     // seek to this location once media is prepared
 
+	private int bufferedPercent = 0;
+		
     /**
      * Constructor.
      *
@@ -501,13 +504,13 @@ public class AudioPlayer implements OnCompletionListener, OnPreparedListener, On
                                 sendErrorStatus(MEDIA_ERR_ABORTED);
                             }
                             return false;//we´re not ready yet
-                        } 
+                        }
                         else {
                            //reset the audio file
                             player.seekTo(0);
                             player.pause();
-                            return true; 
-                        } 
+                            return true;
+                        }
                     } else {
                         //reset the player
                         this.player.reset();
@@ -542,6 +545,7 @@ public class AudioPlayer implements OnCompletionListener, OnPreparedListener, On
             this.setMode(MODE.PLAY);
             this.setState(STATE.MEDIA_STARTING);
             this.player.setOnPreparedListener(this);
+			this.player.setOnBufferingUpdateListener(this);
             this.player.prepareAsync();
         }
         else {
@@ -598,4 +602,34 @@ public class AudioPlayer implements OnCompletionListener, OnPreparedListener, On
 
         this.handler.sendEventMessage("status", statusDetails);
     }
+
+    /**
+     * Get current amplitude of recording.
+     *
+     * @return amplitude or 0 if not recording
+     */
+    public float getCurrentAmplitude() {
+        if (this.recorder != null) {
+            try{
+                if (this.state == STATE.MEDIA_RUNNING) {
+                    return (float) this.recorder.getMaxAmplitude() / 32762;
+                }
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return 0;
+    }
+	
+	@Override
+	public void onBufferingUpdate(MediaPlayer mp, int percent) {
+		// TODO Auto-generated method stub
+		bufferedPercent = percent;
+		
+	}
+
+	public int getBufferedPercent() {
+		return bufferedPercent;
+	}
 }

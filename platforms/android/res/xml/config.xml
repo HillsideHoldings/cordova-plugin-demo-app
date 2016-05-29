@@ -5,6 +5,12 @@
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="VolumeSlider">
+        <param name="android-package" value="org.devgeeks.volumeslider.VolumeSlider" />
+    </feature>
+    <description>
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
     <feature name="File">
         <param name="android-package" value="org.apache.cordova.file.FileUtils" />
         <param name="onload" value="true" />
@@ -21,9 +27,6 @@
     <preference name="KeepRunning" value="true" />
     <feature name="Lockscreen">
         <param name="android-package" value="org.apache.cordova.media.lockscreencontrols.LockscreenPlugin" />
-    </feature>
-    <feature name="VolumeSlider">
-        <param name="android-package" value="org.devgeeks.volumeslider.VolumeSlider" />
     </feature>
     <allow-intent href="market:*" />
     <name>Media Plugin</name>

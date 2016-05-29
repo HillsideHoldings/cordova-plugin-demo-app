@@ -69,7 +69,6 @@ function initLockScreenControls() {
 }
 
 // Play audio
-//
 function playAudio() {
 	if (my_media == null)
 		initMedia();
@@ -82,34 +81,39 @@ function playAudio() {
 		// clearInterval(mediaTimer);
 		document.getElementById("playbtn").innerHTML = "Play";
 		document.getElementById("buff").innerHTML = "0%";
-		lockscreen.setState(Lockscreen.STATE_PAUSED);
-
+		if (lockscreen != null) {
+			lockscreen.setState(Lockscreen.STATE_PAUSED);
+		}
+		
 	} else {
 		// Play audio
 		my_media.play();
 		isPlaying = true;
 		document.getElementById("playbtn").innerHTML = "Stop";
 
-		// clearInterval(mediaTimer);
-		// Update media position every second
-		// mediaTimer = setInterval(function() {
-		// updateBufferValue();
-		// }, 1000);
+//		 clearInterval(mediaTimer);
+//		 Update media position every second
+//		 mediaTimer = setInterval(function() {
+//		 updateBufferValue();
+//		 }, 1000);
 
-		lockscreen.setState(Lockscreen.STATE_PLAYING);
-		lockscreen.setMetadata({
-			"title" : "Khai k paan banaras wala",
-			"subTitle" : "Don",
-			"duration" : 123000,
-			"image" : "http://www.songspk320z.us/img/globe.png"
-		});
+		if (lockscreen != null) {
 
-		// lets show this information on notification as well
-		cordova.plugins.backgroundMode.setDefaults({
-			title : "Playing...",
-			ticker : "Playing...",
-			text : "Khai k paan banaras wala"
-		});
+			lockscreen.setState(Lockscreen.STATE_PLAYING);
+			lockscreen.setMetadata({
+				"title" : "Khai k paan banaras wala",
+				"subTitle" : "Don",
+				"duration" : 123000,
+				"image" : "http://www.songspk320z.us/img/globe.png"
+			});
+
+			// lets show this information on notification as well
+			cordova.plugins.backgroundMode.setDefaults({
+				title : "Playing...",
+				ticker : "Playing...",
+				text : "Khai k paan banaras wala"
+			});
+		}
 	}
 
 }
@@ -156,33 +160,44 @@ function onLockScreenEventReceived(event) {
 			p += skipInterval;
 			my_media.seekTo(1000 * p);
 		}, null);
-	}
+	}else if (event.action == Lockscreen.ACTION_HEADSET_SINGLE_CLICK) {
+        // toggle playing
+        playAudio();
+
+    } else if (event.action == Lockscreen.ACTION_HEADSET_DOUBLE_CLICK) {
+
+        alert("Double click from headset detected");
+
+    } else if (event.action == Lockscreen.ACTION_HEADSET_TRIPPLE_CLICK) {
+
+        alert("Tripple click from headset detected");
+    }
 }
 
+function initVolumeSlide() {
 
-function initVolumeSlide(){
-	
 	volumeSlider = window.plugins.volumeSlider;
-	volumeSlider.createVolumeSlider(10, 50, 300, 30); // origin x, origin y, width, height
+	volumeSlider.createVolumeSlider(10, 50, 300, 30); // origin x, origin y,
+														// width, height
 	volumeSlider.showVolumeSlider();
-	
+
 	// lets give some timeout so that volume slider is fully loaded.
-	setTimeout(function(){
-		
-		volumeSlider.getVolumeLevel(function(vol){
-			console.log("Getting current volume: "+vol);
-		}, function(err){
-			console.log("Error getting volume: "+err);
+	setTimeout(function() {
+
+		volumeSlider.getVolumeLevel(function(vol) {
+			console.log("Getting current volume: " + vol);
+		}, function(err) {
+			console.log("Error getting volume: " + err);
 		});
-		
-		// Register for event to get volume when user press volume up or down key. Do not forget to unregister this when application is closed.
-		volumeSlider.registerVolumeUpdate(function(vol){
-			console.log("Volume changed: "+vol);
+
+		// Register for event to get volume when user press volume up or down
+		// key. Do not forget to unregister this when application is closed.
+		volumeSlider.registerVolumeUpdate(function(vol) {
+			console.log("Volume changed: " + vol);
 		});
-		
+
 	}, 500);
-	
-	
+
 }
 
 function onBackKey() {
@@ -191,11 +206,11 @@ function onBackKey() {
 		lockscreen.release();
 		cordova.plugins.backgroundMode.disable();
 	}
-	
+
 	// unregister volume update to avoid memory leaks.
-	if(volumeSlider != null){
+	if (volumeSlider != null) {
 		volumeSlider.unRegisterVolumeUpdate();
 	}
-	
+
 	navigator.app.exitApp();
 }

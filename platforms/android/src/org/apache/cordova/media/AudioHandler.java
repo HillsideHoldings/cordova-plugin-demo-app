@@ -21,6 +21,7 @@ package org.apache.cordova.media;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaResourceApi;
+import org.apache.cordova.PermissionHelper;
 
 import android.Manifest;
 import android.content.Context;
@@ -151,7 +152,7 @@ public class AudioHandler extends CordovaPlugin {
             callbackContext.sendPluginResult(new PluginResult(status, f));
             return true;
         }
-        else if (action.equals("getBufferedPercentAudio")) {
+		else if (action.equals("getBufferedPercentAudio")) {
         	int f = this.getBufferedPercentAudio(args.getString(0));
             callbackContext.sendPluginResult(new PluginResult(status, f));
             return true;
@@ -169,9 +170,10 @@ public class AudioHandler extends CordovaPlugin {
         else if (action.equals("messageChannel")) {
             messageChannel = callbackContext;
             return true;
-        }
-        else if (action.equals("mediaControlSetup")) {
-        	this.setupLockScreenControls(args.getString(0));
+        } else if (action.equals("getCurrentAmplitudeAudio")) {
+            float f = this.getCurrentAmplitudeAudio(args.getString(0));
+            callbackContext.sendPluginResult(new PluginResult(status, f));
+            return true;
         }
         else { // Unrecognized action.
             return false;
@@ -359,8 +361,8 @@ public class AudioHandler extends CordovaPlugin {
         AudioPlayer audio = getOrCreatePlayer(id, file);
         return audio.getDuration(file);
     }
-    
-    /**
+	
+	/**
      * Get percentage of buffered data of playback.
      * @param id				The id of the audio player
      * @return 					buffered data in percentage
@@ -372,14 +374,6 @@ public class AudioHandler extends CordovaPlugin {
         }
         return 0;
     }
-    
-    public void setupLockScreenControls(String id) {
-        AudioPlayer audio = this.players.get(id);
-        if (audio != null) {
-            audio.setupLockScreenMediaControls(this.cordova.getActivity());
-        }
-    }
-    
 
     /**
      * Set the audio device to be used for playback.
@@ -500,5 +494,16 @@ public class AudioHandler extends CordovaPlugin {
 
     }
 
-
+    /**
+     * Get current amplitude of recording.
+     * @param id				The id of the audio player
+     * @return 					amplitude
+     */
+    public float getCurrentAmplitudeAudio(String id) {
+        AudioPlayer audio = this.players.get(id);
+        if (audio != null) {
+            return (audio.getCurrentAmplitude());
+        }
+        return 0;
+    }
 }

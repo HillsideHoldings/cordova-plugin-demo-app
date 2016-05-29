@@ -13,6 +13,10 @@
                             "count": 1
                         },
                         {
+                            "xml": "<feature name=\"VolumeSlider\"><param name=\"android-package\" value=\"org.devgeeks.volumeslider.VolumeSlider\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"File\"><param name=\"android-package\" value=\"org.apache.cordova.file.FileUtils\" /><param name=\"onload\" value=\"true\" /></feature>",
                             "count": 1
                         },
@@ -34,10 +38,6 @@
                         },
                         {
                             "xml": "<feature name=\"Lockscreen\"><param name=\"android-package\" value=\"org.apache.cordova.media.lockscreencontrols.LockscreenPlugin\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"VolumeSlider\"><param name=\"android-package\" value=\"org.devgeeks.volumeslider.VolumeSlider\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -81,13 +81,19 @@
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.billinar.mediabufferplugin"
         },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.billinar.mediabufferplugin"
+        },
+        "org.devgeeks.volumeslider": {
+            "PACKAGE_NAME": "com.billinar.mediabufferplugin"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.billinar.mediabufferplugin"
+        },
         "cordova-plugin-file": {
             "PACKAGE_NAME": "com.billinar.mediabufferplugin"
         },
         "cordova-plugin-media": {
-            "PACKAGE_NAME": "com.billinar.mediabufferplugin"
-        },
-        "cordova-plugin-console": {
             "PACKAGE_NAME": "com.billinar.mediabufferplugin"
         },
         "cordova-plugin-device": {
@@ -98,9 +104,6 @@
         },
         "cordova-lock-screen-media-controls": {
             "PACKAGE_NAME": "com.billinar.mediabufferplugin"
-        },
-        "org.devgeeks.volumeslider": {
-            "PACKAGE_NAME": "com.billinar.mediabufferplugin"
         }
     },
     "dependent_plugins": {},
@@ -109,6 +112,13 @@
             "file": "plugins/cordova-plugin-whitelist/whitelist.js",
             "id": "cordova-plugin-whitelist.whitelist",
             "runs": true
+        },
+        {
+            "file": "plugins/org.devgeeks.volumeslider/www/VolumeSlider.js",
+            "id": "org.devgeeks.volumeslider.VolumeSlider",
+            "clobbers": [
+                "plugins.volumeSlider"
+            ]
         },
         {
             "file": "plugins/cordova-plugin-file/www/DirectoryEntry.js",
@@ -296,23 +306,17 @@
             "clobbers": [
                 "Lockscreen"
             ]
-        },
-        {
-            "file": "plugins/org.devgeeks.volumeslider/www/VolumeSlider.js",
-            "id": "org.devgeeks.volumeslider.VolumeSlider",
-            "clobbers": [
-                "plugins.volumeSlider"
-            ]
         }
     ],
     "plugin_metadata": {
         "cordova-plugin-whitelist": "1.2.1",
-        "cordova-plugin-file": "4.1.1",
-        "cordova-plugin-media": "2.2.0",
         "cordova-plugin-console": "1.0.2",
+        "org.devgeeks.volumeslider": "1.0.0",
+        "cordova-plugin-compat": "1.0.0",
+        "cordova-plugin-file": "4.2.0",
+        "cordova-plugin-media": "2.2.1-dev",
         "cordova-plugin-device": "1.1.2",
         "cordova-plugin-background-mode": "0.6.5",
-        "cordova-lock-screen-media-controls": "0.0.1",
-        "org.devgeeks.volumeslider": "1.0.0"
+        "cordova-lock-screen-media-controls": "0.0.1"
     }
 }
