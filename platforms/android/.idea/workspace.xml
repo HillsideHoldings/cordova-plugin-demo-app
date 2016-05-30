@@ -1,159 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="911c7354-0ca2-41d5-ab93-187ec6c301a0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/android_support_v4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/android_support_v7_appcompat.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/picasso_2_0_0.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/apache/cordova/file/PermissionHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/apache/cordova/media/LockScreenMediaControl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/apache/cordova/media/MediaButtonReceiver.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/org/apache/cordova/media/PermissionHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../plugins/cordova-lock-screen-media-controls/www/lockscreen2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/src/android/PermissionHelper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/src/android/PermissionHelper.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CordovaLib/bin/cordovalib.jar" afterPath="$PROJECT_DIR$/CordovaLib/bin/cordovalib.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/MainActivity.apk" afterPath="$PROJECT_DIR$/bin/MainActivity.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes.dex" afterPath="$PROJECT_DIR$/bin/classes.dex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/org/apache/cordova/media/lockscreencontrols/MediaSessionController$1.class" afterPath="$PROJECT_DIR$/bin/classes/org/apache/cordova/media/lockscreencontrols/MediaSessionController$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/org/apache/cordova/media/lockscreencontrols/MediaSessionController$2.class" afterPath="$PROJECT_DIR$/bin/classes/org/apache/cordova/media/lockscreencontrols/MediaSessionController$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/classes/org/apache/cordova/media/lockscreencontrols/MediaSessionController.class" afterPath="$PROJECT_DIR$/bin/classes/org/apache/cordova/media/lockscreencontrols/MediaSessionController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dexedLibs/android-support-v4-6b0799253e9ea98db7efa6127b37d595.jar" afterPath="$PROJECT_DIR$/bin/dexedLibs/android-support-v4-6b0799253e9ea98db7efa6127b37d595.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dexedLibs/android-support-v7-appcompat-7192ad299df286d710a61f06e10b4876.jar" afterPath="$PROJECT_DIR$/bin/dexedLibs/android-support-v7-appcompat-7192ad299df286d710a61f06e10b4876.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dexedLibs/cordovalib-65c0dfcf517a450f20a1ad1a2e1cc538.jar" afterPath="$PROJECT_DIR$/bin/dexedLibs/cordovalib-65c0dfcf517a450f20a1ad1a2e1cc538.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/dexedLibs/picasso-2.0.0-1e69fd030a3c259bda4ac6c9f9676714.jar" afterPath="$PROJECT_DIR$/bin/dexedLibs/picasso-2.0.0-1e69fd030a3c259bda4ac6c9f9676714.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/resources.ap_" afterPath="$PROJECT_DIR$/bin/resources.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/ja/index.md" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/ja/index.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.classpath" afterPath="$PROJECT_DIR$/.classpath" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/billinar/mediabufferplugin/DemoApp.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/android_support_v4.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/android_support_v7_appcompat.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/picasso_2_0_0.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/outputFileStates.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.10/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CordovaLib/.classpath" afterPath="$PROJECT_DIR$/CordovaLib/.classpath" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CordovaLib/build.gradle" afterPath="$PROJECT_DIR$/CordovaLib/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CordovaLib/CordovaLib.iml" afterPath="$PROJECT_DIR$/CordovaLib/CordovaLib.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CordovaLib/build/generated/source/buildConfig/androidTest/debug/org/apache/cordova/test/BuildConfig.java" afterPath="$PROJECT_DIR$/CordovaLib/build/generated/source/buildConfig/androidTest/debug/org/apache/cordova/test/BuildConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CordovaLib/build/generated/source/buildConfig/debug/org/apache/cordova/BuildConfig.java" afterPath="$PROJECT_DIR$/CordovaLib/build/generated/source/buildConfig/debug/org/apache/cordova/BuildConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CordovaLib/build/intermediates/bundles/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/CordovaLib/build/intermediates/bundles/debug/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CordovaLib/build/intermediates/bundles/debug/aapt/AndroidManifest.xml" afterPath="$PROJECT_DIR$/CordovaLib/build/intermediates/bundles/debug/aapt/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/mergeDebugAndroidTestAssets/merger.xml" afterPath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/mergeDebugAndroidTestAssets/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/mergeDebugAndroidTestResources/merger.xml" afterPath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/mergeDebugAndroidTestResources/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/mergeDebugAndroidTestShaders/merger.xml" afterPath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/mergeDebugAndroidTestShaders/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterPath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/mergeDebugAssets/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" afterPath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/mergeDebugShaders/merger.xml" afterPath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/mergeDebugShaders/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/packageDebugResources/merger.xml" afterPath="$PROJECT_DIR$/CordovaLib/build/intermediates/incremental/packageDebugResources/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CordovaLib/build/intermediates/manifest/androidTest/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/CordovaLib/build/intermediates/manifest/androidTest/debug/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android.iml" afterPath="$PROJECT_DIR$/android.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/android.json" afterPath="$PROJECT_DIR$/android.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/cordova_plugins.js" afterPath="$PROJECT_DIR$/assets/www/cordova_plugins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/js/index.js" afterPath="$PROJECT_DIR$/assets/www/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/plugins/cordova-lock-screen-media-controls/www/lockscreen.js" afterPath="$PROJECT_DIR$/assets/www/plugins/cordova-lock-screen-media-controls/www/lockscreen.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/plugins/cordova-plugin-background-mode/www/background-mode.js" afterPath="$PROJECT_DIR$/assets/www/plugins/cordova-plugin-background-mode/www/background-mode.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/plugins/cordova-plugin-device/www/device.js" afterPath="$PROJECT_DIR$/assets/www/plugins/cordova-plugin-device/www/device.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/plugins/cordova-plugin-file/www/Entry.js" afterPath="$PROJECT_DIR$/assets/www/plugins/cordova-plugin-file/www/Entry.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/plugins/cordova-plugin-file/www/FileEntry.js" afterPath="$PROJECT_DIR$/assets/www/plugins/cordova-plugin-file/www/FileEntry.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/plugins/cordova-plugin-file/www/FileReader.js" afterPath="$PROJECT_DIR$/assets/www/plugins/cordova-plugin-file/www/FileReader.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/plugins/cordova-plugin-file/www/FileSystem.js" afterPath="$PROJECT_DIR$/assets/www/plugins/cordova-plugin-file/www/FileSystem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/plugins/cordova-plugin-file/www/FileWriter.js" afterPath="$PROJECT_DIR$/assets/www/plugins/cordova-plugin-file/www/FileWriter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/plugins/cordova-plugin-file/www/fileSystems-roots.js" afterPath="$PROJECT_DIR$/assets/www/plugins/cordova-plugin-file/www/fileSystems-roots.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/plugins/cordova-plugin-file/www/requestFileSystem.js" afterPath="$PROJECT_DIR$/assets/www/plugins/cordova-plugin-file/www/requestFileSystem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/plugins/cordova-plugin-file/www/resolveLocalFileSystemURI.js" afterPath="$PROJECT_DIR$/assets/www/plugins/cordova-plugin-file/www/resolveLocalFileSystemURI.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/plugins/cordova-plugin-media/www/Media.js" afterPath="$PROJECT_DIR$/assets/www/plugins/cordova-plugin-media/www/Media.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/plugins/cordova-plugin-media/www/MediaError.js" afterPath="$PROJECT_DIR$/assets/www/plugins/cordova-plugin-media/www/MediaError.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/www/plugins/org.devgeeks.volumeslider/www/VolumeSlider.js" afterPath="$PROJECT_DIR$/assets/www/plugins/org.devgeeks.volumeslider/www/VolumeSlider.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/AndroidManifest.xml" afterPath="$PROJECT_DIR$/bin/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/jarlist.cache" afterPath="$PROJECT_DIR$/bin/jarlist.cache" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platform_www/cordova_plugins.js" afterPath="$PROJECT_DIR$/platform_www/cordova_plugins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platform_www/plugins/cordova-lock-screen-media-controls/www/lockscreen.js" afterPath="$PROJECT_DIR$/platform_www/plugins/cordova-lock-screen-media-controls/www/lockscreen.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platform_www/plugins/cordova-plugin-background-mode/www/background-mode.js" afterPath="$PROJECT_DIR$/platform_www/plugins/cordova-plugin-background-mode/www/background-mode.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platform_www/plugins/cordova-plugin-device/www/device.js" afterPath="$PROJECT_DIR$/platform_www/plugins/cordova-plugin-device/www/device.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platform_www/plugins/cordova-plugin-file/www/Entry.js" afterPath="$PROJECT_DIR$/platform_www/plugins/cordova-plugin-file/www/Entry.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platform_www/plugins/cordova-plugin-file/www/FileEntry.js" afterPath="$PROJECT_DIR$/platform_www/plugins/cordova-plugin-file/www/FileEntry.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platform_www/plugins/cordova-plugin-file/www/FileReader.js" afterPath="$PROJECT_DIR$/platform_www/plugins/cordova-plugin-file/www/FileReader.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platform_www/plugins/cordova-plugin-file/www/FileSystem.js" afterPath="$PROJECT_DIR$/platform_www/plugins/cordova-plugin-file/www/FileSystem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platform_www/plugins/cordova-plugin-file/www/FileWriter.js" afterPath="$PROJECT_DIR$/platform_www/plugins/cordova-plugin-file/www/FileWriter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platform_www/plugins/cordova-plugin-file/www/fileSystems-roots.js" afterPath="$PROJECT_DIR$/platform_www/plugins/cordova-plugin-file/www/fileSystems-roots.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platform_www/plugins/cordova-plugin-file/www/requestFileSystem.js" afterPath="$PROJECT_DIR$/platform_www/plugins/cordova-plugin-file/www/requestFileSystem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platform_www/plugins/cordova-plugin-file/www/resolveLocalFileSystemURI.js" afterPath="$PROJECT_DIR$/platform_www/plugins/cordova-plugin-file/www/resolveLocalFileSystemURI.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platform_www/plugins/cordova-plugin-media/www/Media.js" afterPath="$PROJECT_DIR$/platform_www/plugins/cordova-plugin-media/www/Media.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platform_www/plugins/cordova-plugin-media/www/MediaError.js" afterPath="$PROJECT_DIR$/platform_www/plugins/cordova-plugin-media/www/MediaError.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/xml/config.xml" afterPath="$PROJECT_DIR$/res/xml/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/cordova/file/FileUtils.java" afterPath="$PROJECT_DIR$/src/org/apache/cordova/file/FileUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/cordova/file/LocalFilesystem.java" afterPath="$PROJECT_DIR$/src/org/apache/cordova/file/LocalFilesystem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/cordova/media/AudioHandler.java" afterPath="$PROJECT_DIR$/src/org/apache/cordova/media/AudioHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/cordova/media/AudioPlayer.java" afterPath="$PROJECT_DIR$/src/org/apache/cordova/media/AudioPlayer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/cordova/media/FileHelper.java" afterPath="$PROJECT_DIR$/src/org/apache/cordova/media/FileHelper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/org/apache/cordova/media/lockscreencontrols/MediaSessionController.java" afterPath="$PROJECT_DIR$/src/org/apache/cordova/media/lockscreencontrols/MediaSessionController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/android.json" afterPath="$PROJECT_DIR$/../../plugins/android.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-lock-screen-media-controls/plugin.xml" afterPath="$PROJECT_DIR$/../../plugins/cordova-lock-screen-media-controls/plugin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-lock-screen-media-controls/src/android/MediaSessionController.java" afterPath="$PROJECT_DIR$/../../plugins/cordova-lock-screen-media-controls/src/android/MediaSessionController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-lock-screen-media-controls/src/ios/Lockscreen.h" afterPath="$PROJECT_DIR$/../../plugins/cordova-lock-screen-media-controls/src/ios/Lockscreen.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-lock-screen-media-controls/src/ios/Lockscreen.m" afterPath="$PROJECT_DIR$/../../plugins/cordova-lock-screen-media-controls/src/ios/Lockscreen.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-lock-screen-media-controls/www/lockscreen.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-lock-screen-media-controls/www/lockscreen.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/README.md" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/RELEASENOTES.md" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/RELEASENOTES.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/package.json" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/plugin.xml" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/plugin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/src/android/FileUtils.java" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/src/android/FileUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/src/android/LocalFilesystem.java" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/src/android/LocalFilesystem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/src/blackberry10/index.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/src/blackberry10/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/src/browser/FileProxy.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/src/browser/FileProxy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/src/firefoxos/FileProxy.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/src/firefoxos/FileProxy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/src/ios/CDVFile.m" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/src/ios/CDVFile.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/src/windows/FileProxy.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/src/windows/FileProxy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/tests/plugin.xml" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/tests/plugin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/tests/tests.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/tests/tests.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/Entry.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/Entry.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/FileEntry.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/FileEntry.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/FileReader.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/FileReader.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/FileSystem.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/FileSystem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/FileWriter.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/FileWriter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/blackberry10/FileSystem.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/blackberry10/FileSystem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/blackberry10/copyTo.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/blackberry10/copyTo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/blackberry10/readEntries.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/blackberry10/readEntries.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/blackberry10/requestAllFileSystems.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/blackberry10/requestAllFileSystems.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/blackberry10/truncate.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/blackberry10/truncate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/blackberry10/write.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/blackberry10/write.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/browser/Preparing.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/browser/Preparing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/fileSystems-roots.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/fileSystems-roots.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/requestFileSystem.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/requestFileSystem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/resolveLocalFileSystemURI.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/resolveLocalFileSystemURI.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/ubuntu/FileWriter.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/ubuntu/FileWriter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/ubuntu/fileSystems-roots.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-file/www/ubuntu/fileSystems-roots.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/CONTRIBUTING.md" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/CONTRIBUTING.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/LICENSE" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/NOTICE" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/NOTICE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/README.md" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/RELEASENOTES.md" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/RELEASENOTES.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/de/README.md" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/de/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/de/index.md" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/de/index.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/es/README.md" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/es/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/es/index.md" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/es/index.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/fr/README.md" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/fr/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/fr/index.md" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/fr/index.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/it/README.md" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/it/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/it/index.md" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/it/index.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/ja/README.md" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/ja/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/ko/README.md" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/ko/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/ko/index.md" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/ko/index.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/pl/README.md" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/pl/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/pl/index.md" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/pl/index.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/ru/index.md" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/ru/index.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/zh/README.md" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/zh/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/zh/index.md" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/doc/zh/index.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/package.json" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/plugin.xml" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/plugin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/src/android/AudioHandler.java" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/src/android/AudioHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/src/android/AudioPlayer.java" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/src/android/AudioPlayer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/src/android/FileHelper.java" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/src/android/FileHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/src/blackberry10/index.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/src/blackberry10/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/src/ios/CDVSound.h" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/src/ios/CDVSound.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/src/ios/CDVSound.m" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/src/ios/CDVSound.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/src/tizen/MediaProxy.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/src/tizen/MediaProxy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/src/ubuntu/media.cpp" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/src/ubuntu/media.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/src/ubuntu/media.h" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/src/ubuntu/media.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/src/windows/MediaProxy.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/src/windows/MediaProxy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/src/wp/AudioPlayer.cs" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/src/wp/AudioPlayer.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/src/wp/Media.cs" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/src/wp/Media.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/tests/plugin.xml" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/tests/plugin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/tests/tests.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/tests/tests.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/www/Media.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/www/Media.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/www/MediaError.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/www/MediaError.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/www/browser/Media.js" afterPath="$PROJECT_DIR$/../../plugins/cordova-plugin-media/www/browser/Media.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../plugins/fetch.json" afterPath="$PROJECT_DIR$/../../plugins/fetch.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../www/js/index.js" afterPath="$PROJECT_DIR$/../../www/js/index.js" />
     </list>
     <ignored path="android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -180,18 +58,47 @@
     <favorites_list name="android" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30582523">
-              <caret line="66" column="44" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="162" column="61" selection-start-line="162" selection-start-column="61" selection-end-line="162" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MediaSessionController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/apache/cordova/media/lockscreencontrols/MediaSessionController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2524272">
+              <caret line="277" column="26" selection-start-line="277" selection-start-column="26" selection-end-line="277" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MusicIntentReceiver.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/apache/cordova/media/lockscreencontrols/MusicIntentReceiver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -312,6 +219,18 @@
                 <option name="description" value="Deletes the build directory." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="clean" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="collectDebugAndroidTestMultiDexComponents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="collectDebugMultiDexComponents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="collectReleaseMultiDexComponents" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -690,6 +609,16 @@
                 <option name="name" value="prepareAndroidCordovaLibUnspecifiedReleaseLibrary" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare com.android.support:multidex:1.0.1" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComAndroidSupportMultidex101Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.android.support:multidex-instrumentation:1.0.1" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComAndroidSupportMultidexInstrumentation101Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="prepareDebugAndroidTestDependencies" />
               </ExternalTaskPojo>
@@ -804,6 +733,30 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="transformClassesWithDexForRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="transformClassesWithJarMergingForDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="transformClassesWithJarMergingForDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="transformClassesWithJarMergingForRelease" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="transformClassesWithMultidexlistForDebug" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="transformClassesWithMultidexlistForDebugAndroidTest" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="transformClassesWithMultidexlistForRelease" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -1570,7 +1523,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="5849518805190" />
+        <entry key="$PROJECT_DIR$" value="5849611079981" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1585,6 +1538,7 @@
                       <ExternalModuleBuildClasspathPojo>
                         <option name="entries">
                           <list>
+                            <option value="$PROJECT_DIR$/../../../../../../../Software/android-sdk/extras/android/m2repository/com/android/support/multidex/1.0.0/multidex-1.0.0.aar" />
                             <option value="$MODULE_DIR$/libs/android-support-v4.jar" />
                             <option value="$MODULE_DIR$/libs/android-support-v7-appcompat.jar" />
                             <option value="$MODULE_DIR$/libs/picasso-2.0.0.jar" />
@@ -1677,6 +1631,7 @@
                       <ExternalModuleBuildClasspathPojo>
                         <option name="entries">
                           <list>
+                            <option value="$PROJECT_DIR$/../../../../../../../Software/android-sdk/extras/android/m2repository/com/android/support/multidex/1.0.0/multidex-1.0.0.aar" />
                             <option value="$MODULE_DIR$/libs/android-support-v4.jar" />
                             <option value="$MODULE_DIR$/libs/android-support-v7-appcompat.jar" />
                             <option value="$MODULE_DIR$/libs/picasso-2.0.0.jar" />
@@ -1900,8 +1855,11 @@
       <list>
         <option value="$PROJECT_DIR$/assets/www/plugins/cordova-lock-screen-media-controls/www/lockscreen.js" />
         <option value="$PROJECT_DIR$/src/org/apache/cordova/media/AudioPlayer.java" />
-        <option value="$PROJECT_DIR$/src/org/apache/cordova/media/lockscreencontrols/MediaSessionController.java" />
         <option value="$PROJECT_DIR$/assets/www/js/index.js" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/com/billinar/mediabufferplugin/DemoApp.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/org/apache/cordova/media/lockscreencontrols/MediaSessionController.java" />
       </list>
     </option>
   </component>
@@ -1936,12 +1894,139 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gradle Scripts" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cordova" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cordova" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="media" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cordova" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="media" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lockscreencontrols" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="android" />
@@ -1950,6 +2035,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1958,6 +2046,7 @@
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="device.picker.selection" value="1e5c6c4b" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -2177,7 +2266,7 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="false" name="android" type="AndroidRunConfigurationType" factoryName="Android Application">
+    <configuration default="false" name="android" type="AndroidRunConfigurationType" factoryName="Android Application" activateToolWindowBeforeRun="false">
       <module name="android" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
@@ -2191,7 +2280,7 @@
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="DEBUGGER_TYPE" value="Java" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="true" />
       <option name="PREFERRED_AVD" value="" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
@@ -2238,36 +2327,36 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905483" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6336056" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24919614" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -2278,11 +2367,36 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/assets/www/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="64" column="27" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/cordova/media/lockscreencontrols/MediaSessionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="74" selection-start-line="50" selection-start-column="74" selection-end-line="50" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/apache/cordova/media/FileHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21359223">
           <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2290,27 +2404,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.376214">
           <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#13246#13247#0" expanded="true" />
-            <element signature="e#13306#13307#0" expanded="true" />
-            <element signature="e#14935#14936#0" expanded="true" />
-            <element signature="e#14978#14979#0" expanded="true" />
-            <element signature="e#15104#15105#0" expanded="true" />
-            <element signature="e#15157#15158#0" expanded="true" />
-            <element signature="e#20479#20480#0" expanded="true" />
-            <element signature="e#20541#20542#0" expanded="true" />
-            <element signature="e#22175#22176#0" expanded="true" />
-            <element signature="e#22204#22205#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/apache/cordova/media/lockscreencontrols/MediaSessionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2322,11 +2415,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48297605">
+          <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+          <folding>
+            <element signature="e#712#730#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/billinar/mediabufferplugin/DemoApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32038835">
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3616505">
+          <caret line="168" column="25" selection-start-line="168" selection-start-column="12" selection-end-line="168" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#858#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/cordova/media/lockscreencontrols/MusicIntentReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30582523">
-          <caret line="66" column="44" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="162" column="61" selection-start-line="162" selection-start-column="61" selection-end-line="162" selection-end-column="61" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/apache/cordova/media/lockscreencontrols/MediaSessionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2524272">
+          <caret line="277" column="26" selection-start-line="277" selection-start-column="26" selection-end-line="277" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

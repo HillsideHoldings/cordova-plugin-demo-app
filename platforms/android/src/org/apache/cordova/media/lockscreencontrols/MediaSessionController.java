@@ -1,23 +1,37 @@
 package org.apache.cordova.media.lockscreencontrols;
 
+import android.app.Notification;
+import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.os.Handler;
 import android.graphics.Bitmap;
+import android.os.Handler;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.media.MediaMetadataCompat;
 import android.support.v4.media.session.MediaControllerCompat;
 import android.support.v4.media.session.MediaSessionCompat;
 import android.support.v4.media.session.PlaybackStateCompat;
+import android.support.v7.app.NotificationCompat;
 import android.view.KeyEvent;
 import android.widget.Toast;
+
+import com.billinar.mediabufferplugin.MainActivity;
+import com.billinar.mediabufferplugin.R;
 
 /**
  * Created by Bilal on 24/04/2016.
  */
 public class MediaSessionController implements MusicFocusable {
+
+	// Actions for notifications
+	public static final String ACTION_PLAY = "action_play";
+	public static final String ACTION_PAUSE = "action_pause";
+	public static final String ACTION_NEXT = "action_next";
+	public static final String ACTION_PREVIOUS = "action_previous";
+	public static final String ACTION_STOP = "action_stop";
 
 	public enum MediaAction {
 		PLAY_PAUSE, REWIND, FORWARD, STOP, PLAY, PAUSE, HEADSET_SINGLE_CLICK, HEADSET_DOUBLE_CLICK, HEADSET_TRIPPLE_CLICK
@@ -91,6 +105,12 @@ public class MediaSessionController implements MusicFocusable {
 
 		mTransportController = mMediaSessionCompat.getController()
 				.getTransportControls();
+//		try {
+//			MediaControllerCompat mediaControllerCompat = new MediaControllerCompat(mContext, mMediaSessionCompat.getSessionToken());
+//			mTransportController = mediaControllerCompat.getTransportControls();
+//		} catch (RemoteException e) {
+//			e.printStackTrace();
+//		}
 
 		IntentFilter filter = new IntentFilter();
 		filter.addAction(MusicIntentReceiver.ACTION);
@@ -106,6 +126,7 @@ public class MediaSessionController implements MusicFocusable {
 					PlaybackStateCompat.PLAYBACK_POSITION_UNKNOWN, 1.0f);
 			mMediaSessionCompat.setPlaybackState(mPlaybackStateCompatBuilder
 					.build());
+//			buildNotification( generateAction( android.R.drawable.ic_media_play, "Play", ACTION_PLAY ) );
 			break;
 
 		case PAUSED:
@@ -114,6 +135,7 @@ public class MediaSessionController implements MusicFocusable {
 					PlaybackStateCompat.PLAYBACK_POSITION_UNKNOWN, 1.0f);
 			mMediaSessionCompat.setPlaybackState(mPlaybackStateCompatBuilder
 					.build());
+//			buildNotification( generateAction( android.R.drawable.ic_media_pause, "Pause", ACTION_PAUSE ) );
 			break;
 
 		case STOPPED:
@@ -124,6 +146,8 @@ public class MediaSessionController implements MusicFocusable {
 					PlaybackStateCompat.PLAYBACK_POSITION_UNKNOWN, 1.0f);
 			mMediaSessionCompat.setPlaybackState(mPlaybackStateCompatBuilder
 					.build());
+			//createStandardNotification();
+//			buildNotification( generateAction( android.R.drawable.ic_media_play, "Stop", ACTION_STOP ) );
 
 			break;
 		}
@@ -131,8 +155,6 @@ public class MediaSessionController implements MusicFocusable {
 
 	public void setMetaData(String title, String subTitle, long duration,
 			Bitmap backgroundImage) {
-
-		
 
 		MediaMetadataCompat.Builder builder = new MediaMetadataCompat.Builder();
 		builder.putString(MediaMetadataCompat.METADATA_KEY_ALBUM, subTitle);
@@ -159,16 +181,13 @@ public class MediaSessionController implements MusicFocusable {
 
 	@Override
 	public void onGainedAudioFocus() {
-		Toast.makeText(mContext, "gained audio focus.", Toast.LENGTH_SHORT)
-				.show();
+
 		mAudioFocus = AudioFocus.Focused;
 	}
 
 	@Override
 	public void onLostAudioFocus(boolean canDuck) {
-		Toast.makeText(mContext,
-				"lost audio focus." + (canDuck ? "can duck" : "no duck"),
-				Toast.LENGTH_SHORT).show();
+
 		mAudioFocus = canDuck ? AudioFocus.NoFocusCanDuck
 				: AudioFocus.NoFocusNoDuck;
 	}
@@ -348,5 +367,48 @@ public class MediaSessionController implements MusicFocusable {
 
 	public void setMediaActionListener(MediaActionListener mediaActionListener) {
 		this.mediaActionListener = mediaActionListener;
+	}
+
+	private NotificationCompat.Action generateAction(int icon, String title, String intentAction ) {
+		Intent intent = new Intent( mContext, MainActivity.class );
+		intent.setAction( intentAction );
+		PendingIntent pendingIntent = PendingIntent.getActivity(mContext, 1, intent, 0);
+		return new NotificationCompat.Action.Builder( icon, title, pendingIntent ).build();
+	}
+
+	private void buildNotification( NotificationCompat.Action action ) {
+		NotificationCompat.MediaStyle style = new NotificationCompat.MediaStyle();
+		style.setMediaSession(mMediaSessionCompat.getSessionToken());
+
+		Intent intent = new Intent(mContext, MainActivity.class);
+		intent.setAction(ACTION_STOP);
+		PendingIntent pendingIntent = PendingIntent.getActivity(mContext, 1, intent, 0);
+		NotificationCompat.Builder builder = new NotificationCompat.Builder(mContext);
+		builder.setSmallIcon(R.drawable.icon);
+		builder.setContentTitle("Media Title");
+		builder.setContentText("Media Artist");
+		builder.setDeleteIntent(pendingIntent);
+		builder.setStyle(style);
+
+		builder.addAction(generateAction(android.R.drawable.ic_media_previous, "Previous", ACTION_PREVIOUS));
+		builder.addAction(action);
+		builder.addAction(generateAction(android.R.drawable.ic_media_next, "Next", ACTION_NEXT));
+
+		NotificationManagerCompat notificationManager = NotificationManagerCompat.from(mContext);
+		notificationManager.notify(1, builder.build());
+	}
+
+	private void createStandardNotification(){
+		Notification notification = new NotificationCompat.Builder(mContext)
+				.setContentTitle("Public Notification")
+				.setContentText("Public content here")
+				.setSmallIcon(R.drawable.icon)
+				.setCategory(Notification.CATEGORY_STATUS)
+				.setVisibility(Notification.VISIBILITY_PUBLIC)
+				.build();
+
+		NotificationManagerCompat notificationManager = NotificationManagerCompat.from(mContext);
+		notificationManager.notify(100, notification);
+
 	}
 }
