@@ -82,7 +82,7 @@ function playAudio() {
 		document.getElementById("playbtn").innerHTML = "Play";
 		document.getElementById("buff").innerHTML = "0%";
 		if (lockscreen != null) {
-			lockscreen.setState(Lockscreen.STATE_PAUSED);
+			lockscreen.setState(Lockscreen.STATE_STOPPED);
 		}
 		
 	} else {
@@ -99,7 +99,7 @@ function playAudio() {
 
 		if (lockscreen != null) {
 
-			lockscreen.setState(Lockscreen.STATE_PLAYING);
+            lockscreen.setState(Lockscreen.STATE_PLAYING);
 			lockscreen.setMetadata({
 				"title" : "Khai k paan banaras wala",
 				"subTitle" : "Don",

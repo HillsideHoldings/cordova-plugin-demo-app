@@ -41,7 +41,6 @@ var isPlaying = false;
 var mediaTimer = null;
 var lockscreen = null;
 var volumeSlider = null;
-var externalMediaControls = null;
 
 function initMedia() {
 	var url = "http://www.songspk320z.us/songoftheday/[Songs.PK]%20Khaike%20Paan%20Banaraswala%20-%20Don%20(2006).mp3";
@@ -57,8 +56,6 @@ function initMedia() {
 	});
 
 	initLockScreenControls();
-
-	//initExternalMediaControls();
 
 }
 
@@ -85,7 +82,7 @@ function playAudio() {
 		document.getElementById("playbtn").innerHTML = "Play";
 		document.getElementById("buff").innerHTML = "0%";
 		if (lockscreen != null) {
-			lockscreen.setState(Lockscreen.STATE_PAUSED);
+			lockscreen.setState(Lockscreen.STATE_STOPPED);
 		}
 		
 	} else {
@@ -94,15 +91,15 @@ function playAudio() {
 		isPlaying = true;
 		document.getElementById("playbtn").innerHTML = "Stop";
 
-		// clearInterval(mediaTimer);
-		// Update media position every second
-		// mediaTimer = setInterval(function() {
-		// updateBufferValue();
-		// }, 1000);
+//		 clearInterval(mediaTimer);
+//		 Update media position every second
+//		 mediaTimer = setInterval(function() {
+//		 updateBufferValue();
+//		 }, 1000);
 
 		if (lockscreen != null) {
 
-			lockscreen.setState(Lockscreen.STATE_PLAYING);
+            lockscreen.setState(Lockscreen.STATE_PLAYING);
 			lockscreen.setMetadata({
 				"title" : "Khai k paan banaras wala",
 				"subTitle" : "Don",
@@ -202,24 +199,6 @@ function initVolumeSlide() {
 	}, 500);
 
 }
-
-//function initExternalMediaControls() {
-//	externalMediaControls = new ExternalMediaControls();
-//	externalMediaControls.listenExternalActions(function(){
-//		if (event.action == ExternalMediaControls.ACTION_HEADSET_SINGLE_CLICK) {
-//			// toggle playing
-//			playAudio();
-//
-//		} else if (event.action == ExternalMediaControls.ACTION_HEADSET_DOUBLE_CLICK) {
-//
-//			alert("Double click from headset detected");
-//
-//		} else if (event.action == ExternalMediaControls.ACTION_HEADSET_TRIPPLE_CLICK) {
-//
-//			alert("Tripple click from headset detected");
-//		}
-//	});
-//}
 
 function onBackKey() {
 	// lets release the lock screen media now. It is necessary.

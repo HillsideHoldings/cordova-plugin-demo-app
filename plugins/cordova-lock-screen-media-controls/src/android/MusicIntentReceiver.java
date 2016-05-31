@@ -32,6 +32,7 @@ import android.widget.Toast;
 public class MusicIntentReceiver extends BroadcastReceiver {
     
 	public static final String ACTION = "com.billinar.lockscreencontrols.BUTTON_EVENT";
+	public static final String ACTION_NOTIFICATION = "com.billinar.lockscreencontrols.NOTIFICATION_EVENT";
 	
 	@Override
     public void onReceive(Context context, Intent intent) {

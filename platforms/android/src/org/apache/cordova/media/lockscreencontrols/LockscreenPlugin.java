@@ -68,7 +68,8 @@ public class LockscreenPlugin extends CordovaPlugin {
 					: "";
 			final long duration = args.has("duration") ? args.getLong("duration") : 0;
 			String image = args.has("image") ? args.getString("image") : "";
-			
+
+			lockScreenController.setMetaData(title, subTitle, duration, null);
 			if (!image.isEmpty()) {
 				Picasso.with(cordova.getActivity()).load(image)
 						.into(new Target() {
@@ -77,6 +78,7 @@ public class LockscreenPlugin extends CordovaPlugin {
 							public void onBitmapLoaded(Bitmap b,
 									LoadedFrom arg1) {
 								// TODO Auto-generated method stub
+								Log.d("DemoApp", "Bitmaps loaded success");
 								lockScreenController.setMetaData(title,
 										subTitle, duration, b);
 							}
@@ -88,9 +90,6 @@ public class LockscreenPlugin extends CordovaPlugin {
 										subTitle, duration, null);
 							}
 						});
-			} else {
-				lockScreenController.setMetaData(title, subTitle, duration,
-						null);
 			}
 
 		}
