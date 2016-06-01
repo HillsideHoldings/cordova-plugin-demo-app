@@ -78,7 +78,6 @@ public class LockscreenPlugin extends CordovaPlugin {
 							public void onBitmapLoaded(Bitmap b,
 									LoadedFrom arg1) {
 								// TODO Auto-generated method stub
-								Log.d("DemoApp", "Bitmaps loaded success");
 								lockScreenController.setMetaData(title,
 										subTitle, duration, b);
 							}

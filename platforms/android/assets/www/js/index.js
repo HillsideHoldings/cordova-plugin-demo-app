@@ -91,20 +91,45 @@ function playAudio() {
 		isPlaying = true;
 		document.getElementById("playbtn").innerHTML = "Stop";
 
-//		 clearInterval(mediaTimer);
-//		 Update media position every second
-//		 mediaTimer = setInterval(function() {
-//		 updateBufferValue();
-//		 }, 1000);
+		 clearInterval(mediaTimer);
+		    //Update media position every second
+            mediaTimer = setInterval(function() {
+                updateBufferValue();
+		 }, 1000);
 
-		if (lockscreen != null) {
+
+         /**
+            Below is the logic to select image either from local file system or from a URL. Default is selected to choose from local.
+            uncomment below line to choose from online URL.
+         **/
+
+         //var imagePath = "http://www.songspk320z.us/img/globe.png";
+		 var imagePath = "file:///android_asset/www/img/leaf.jpg";
+
+		 if(imagePath.indexOf("http") == 0){
+		    updateLockScreenContent(imagePath);
+		 }else{
+             window.resolveLocalFileSystemURL(imagePath, function(fileEntry){
+                updateLockScreenContent(fileEntry.toURL());
+             }, function(err){
+                console.log("Error finding path: "+err);
+             });
+		 }
+
+
+	}
+
+}
+
+function updateLockScreenContent(imageURL){
+        if (lockscreen != null) {
 
             lockscreen.setState(Lockscreen.STATE_PLAYING);
 			lockscreen.setMetadata({
 				"title" : "Khai k paan banaras wala",
 				"subTitle" : "Don",
 				"duration" : 123000,
-				"image" : "http://www.songspk320z.us/img/globe.png"
+				"image" : imageURL
 			});
 
 			// lets show this information on notification as well
@@ -114,7 +139,9 @@ function playAudio() {
 				text : "Khai k paan banaras wala"
 			});
 		}
-	}
+}
+
+function getReadablePath(filepath, onResolveSuccess, onFail){
 
 }
 

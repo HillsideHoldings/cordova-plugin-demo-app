@@ -62,6 +62,7 @@ public class MediaSessionController implements MusicFocusable {
     private static final long DOUBLE_PRESS_INTERVAL = 250; // in millis
     private long lastTapTimeMs = 0;
     private int numberOfTaps = 0;
+    private boolean showNotification = true;
 
     public MediaSessionController(Context context) {
         this.mContext = context;
@@ -433,7 +434,7 @@ public class MediaSessionController implements MusicFocusable {
 
 
     private void showNotification() {
-        if(mMediaSessionCompat != null) {
+        if(mMediaSessionCompat != null && showNotification) {
             int playState = mMediaSessionCompat.getController().getPlaybackState().getState();
             if (playState == PlaybackStateCompat.STATE_PLAYING) {
                 applyNotification(generateAction(android.R.drawable.ic_media_pause, "Pause", MediaAction.PLAY_PAUSE, NOTIFICATION_REQUEST_PLAY_PAUSE));
